@@ -1,0 +1,626 @@
+\chapter{Punkty stałe odwzorowań przestrzeni bez promieni}\label{chap5}
+\chaptermark{Punkty stałe w~przestrzeniach bez promieni}
+\begin{center}
+\begin{minipage}{14cm}
+{\small
+Rozdział zawiera twierdzenia o~istnieniu punktu stałego oraz o~strukturze zbioru punktów stałych zachowującego porządek odwzorowania, określonego na częściowym porządku bez promieni, lub odwzorowania symplicjalnego, określonego na kompleksie symplicjalnym bez promieni, a~także wyniki dotyczące struktury zbiorów punktów stałych działań grup na obiektach tego typu.\\
+
+Podajemy kombinatoryczny dowód faktu, że $\infty$-zgniatalny kompleks symplicjalny bez promieni ma własność sympleksu stałego. Wyciągamy stąd wniosek, że jeśli ścięta krata bez mocnych dopełnień nie zawiera promieni, to ma własność punktu stałego. Dowodzimy, że jeżeli $P$~jest częściowym porządkiem bez promieni oraz $P\dism *$ (tzn.~jest $\mathcal{C}$-rozbieralny do punktu), to dla każdego zachowującego porządek odwzorowania $f\colon P\to P$ zbiór punktów stałych $\Fix(f)\dism *$; podobnie, jeśli grupa $\Gamma$~działa na częściowym porządku bez promieni $P$~oraz $P\dism *$, to $P^\Gamma\dism *$. Analogiczne fakty zachodzą dla kompleksów symplicjalnych. Obalamy hipotezę postawioną przez Baclawskiego podając przykład na to, że zbiór punktów stałych odwzorowania $f\colon P\to P$ skończonego częściowego porządku $P$~o~zgniatalnym stowarzyszonym kompleksie symplicjalnym $\mK(P)$~nie musi być spójny; jeżeli jednak $\dim(\mK(P))\leq 3$, dowodzimy, że zbiór $\Fix(f)$ jest acykliczny, a~jeśli $\dim(\mK(P))\leq 2$, to kompleks $\mK(\Fix(f))$ jest zgniatalny.
+\\
+
+Rozdział zainspirowany jest treścią znacznej liczby publikacji \cite{Baclawski12,Barmak12,Duffus80a,Hensel14,Okhezin95,Segev93,Segev94} i~uogólnia niektóre ich wyniki, tym samym rozwiązując bądź częściowo rozwiązując kilka problemów otwartych~\cite{Baclawski12,Bjorner81,Hensel14,Schroder99,Schroder03}.
+}\end{minipage}\\[1.7cm]
+\end{center}
+
+W~poprzednim rozdziale podane zostały przykłady uogólnień na przestrzenie lokalnie zwarte twierdzeń o~punkcie stałym klasycznie formułowanych dla zwartych wielościanów. Inną, naturalnie zdefiniowaną klasą zawierającą wszystkie zwarte wielościany jest klasa wielościanów bez promieni (tzn.~nie zawierających domkniętego podzbioru homeomorficznego z~półprostą $[0,\infty)$). 
+
+Są znane twierdzenia o~punkcie stałym dotyczące tego typu obiektów. Wśród nich z~pewnością wymienić należy te pochodzące z~pracy Okhezina \cite{Okhezin95}, który udowodnił między innymi, że ściągalny wielościan ma własność punktu stałego wtedy i~tylko wtedy, gdy nie zawiera promieni. Co więcej, punkt stały ma każde ciągłe przekształcenie wielościanu bez promieni w~siebie, które jest homotopijne z~funkcją stałą.
+
+Kombinatoryczne wyniki o~punktach stałych, dotyczące skończonych grafów, kompleksów symplicjalnych i~częściowych porządków, także próbowano przenosić na obiekty bez promieni. Jednym ze starszych przykładów tego typu uogólnień jest twierdzenie Nowakowskiego i~Rivala \cite{Nowakowski79} mówiące, że $1$-wymiarowy, acykliczny kompleks symplicjalny (tzn.~graf prosty będący drzewem) bez promieni ma własność symplekstu stałego. Doczekało się ono licznych wariantów i~uogólnień \cite{Espinola06,Halin98,Polat93,Polat95,Polat96,Polat98,Polat04,Polat09,Polat12,Polat94,Schmidt83}, zarówno na szersze klasy grafów, jak i~na rodziny odwzorowań, a~obok sympleksów (czyli wierzchołków i~krawędzi) stałych badano istnienie różnego rodzaju skończonych podzbiorów niezmienniczych. Udało się również scharakteryzować częściowe porządki bez promieni (a~nawet należące do nieco szerszej klasy) mające~własność punktu stałego ze względu na zachowujące porządek funkcje wielowartościowe jako te, które są $\mathcal{C}$-rozbieralne do punktu \cite[Theorem 3.27]{Schroder99}.
+
+Niniejszy rozdział wpisuje się w~ten nurt badań. Podajemy dowód twierdzenia o~istnieniu sympleksu stałego odwzorowania symplicjalnego $\infty$-zgniatalnego kompleksu symplicjalnego bez promieni w~siebie (twierdzenie \ref{tw-baclawskiego_o_punkcie_stalym}). Ponieważ realizacja geometryczna takiego kompleksu jest ściągalnym wielościanem bez promieni, sam wynik jest natychmiastową konsekwencją wspomnianego wyżej twierdzenia Okhezina. Ciekawa jest jednak alternatywna, kombinatoryczna metoda dowodu, dla skończonych kompleksów symplicjalnych zastosowana w~pracy Baclawskiego \cite{Baclawski12}. Opowiedzmy krótko o~jej historii.
+
+Jeden z~klasycznych problemów z~zakresu teorii punktów stałych odwzorowań częściowych porządków dotyczy własności punktu stałego ściętych krat bez dopełnień o~skończonej wysokości \cite[s.~98]{Bjorner81}. Od dość dawna wiadomo, że skończone, ścięte kraty bez dopełnień mają tę własność \cite{Baclawski79}, choć przez długi czas nie znano czysto kombinatorycznego dowodu tego faktu (por.~\cite[s.~838]{Rival82}). W~roku 2012 opublikowane zostało przez Baclawskiego \cite{Baclawski12} tego typu rozumowanie, częścią którego jest dowód własności sympleksu stałego zgniatalnych, skończonych kompleksów symplicjalnych. W~bieżącym rozdziale uogólniamy ten dowód na $\infty$-zgniatalne kompleksy symplicjalne bez promieni, tym samym podając kombinatoryczny dowód własności punktu stałego nie zawierających promieni ściętych krat bez mocnych dopełnień (wniosek \ref{wn-o_fpp_dla_krat}). (Elementy takiego uogólnienia można odnaleźć również w~niepublikowanych notatkach Baclawskiego \cite{Baclawski}.)
+
+Pytać można nie tylko o~istnienie punktu stałego odwzorowania, ale również o~strukturę zbioru jego punktów stałych, i~to pytanie jest drugim z~tematów przewodnich rozdziału. O~ile dla skończonych częściowych porządków są dobrze znane wyniki udzielające na nie, przy różnych założeniach, odpowiedzi \cite{Baclawski79,Duffus80a,Schroder99}, autor nie spotkał się z~ich uogólnieniami, ani ze zbliżonymi rezultatami dotyczącymi obiektów nieskończonych (nie licząc prostych obserwacji na temat drzew oraz klasycznego twierdzenia Tarskiego \cite{Tarski55} o~zupełnych kratach).
+
+Szczególnie ważnym wynikiem niniejszego rozdziału jest twierdzenie \ref{tw-fixed_point_set_of_a_map_is_dismantlable}, które gwarantuje, że zbiór punktów stałych zachowującego porządek odwzorowania określonego na $\mathcal{C}$-rozbieralnym częściowym porządku bez promieni jest \mbox{$\mathcal{C}$-rozbieralny}. Twierdzenie to stanowi częściową odpowiedź na pytanie Schr{\"o}dera \cite[s. 136]{Schroder03}. Podobny wynik jest prawdziwy dla odwzorowań symplicjalnych. 
+
+We wspomnianej wyżej pracy Baclawski stawia hipotezę \cite[Conjecture 34]{Baclawski12}, że jeśli $f\colon P\to P$ jest odwzorowaniem zachowującym porządek, a~$P$~skończonym częściowym porządkiem o~tej własności, że $\mK(P)$~jest zgniatalnym kompleksem symplicjalnym, to kompleks symplicjalny $\mK(\Fix(f))$ również jest zgniatalny. Przykład \ref{ex-mocne_obalenie_baclawskiego}, korzystający z~wyników Adiprasito i~Benedettiego \cite{Adiprasito13a} oraz Olivera \cite{Oliver75}, pokazuje, że ta hipoteza oraz jej słabsze wersje są fałszywe. Z~drugiej strony, opierając się o~prace Segeva \cite{Segev93,Segev94}, częściowo potwierdzamy tę hipotezę przy dodatkowym założeniu, że kompleks $\mK(P)$ jest niskiego wymiaru (stwierdzenie \ref{stw-baclawski_dla_wymiarow_2_i_3}).
+
+Ostatnim z~poruszanych w~rozdziale zagadnienień jest struktura zbioru punktów stałych działania grupy. Wiele prac poświęcono  badaniu zbioru punktów stałych działania grupy na skończonym kompleksie symplicjalnym przy założeniu o~,,prostej strukturze'' tego kompleksu, opisanej przez własności takie jak ściągalność realizacji geometrycznej, zgniatalność czy acykliczność (zob.~np.~\cite{Smith42, Oliver75,Segev93,Segev94}). Okazuje się, że nawet stosunkowo mocne założenia o~kompleksie symplicjalnym nie gwarantują chociażby istnienia punktu stałego symplicjalnego działania dowolnej grupy na tym kompleksie. Na tym tle wyróżnia się następujący rezultat: sympleksy stałe dopuszczalnego działania grupy na skończonym, \mbox{$\mCtriang$-rozbieralnym} do punktu kompleksie symplicjalnym tworzą jego \mbox{$\mCtriang$-rozbieralny} do punktu podkompleks \cite{Barmak12,Hensel14}. Stwierdzenie \ref{stw-rozbieralny_g_kompleks_rozbieralne_punkty_stale} uogólnia ten wynik na \mbox{$\mCtriang$}-rozbieralne do punktu kompleksy symplicjalne bez promieni.
+
+Rozdział zorganizowany jest w~następujący sposób. W~podrozdziale \ref{sec-istnienie_fixpunktu_bez_promieni} zajmujemy się twierdzeniami dotyczącymi istnienia punktu stałego odwzorowania przestrzeni bez promieni w~siebie. Rozpoczynamy od krótkiego przypomnienia znanych wyników tego typu oraz sformułowania kilku otwartych problemów. Następnie kombinatoryczny dowód Baclawskiego \cite{Baclawski12} twierdzenia o~sympleksie stałym odwzorowania symplicjalnego zgniatalnego, skończonego kompleksu symplicjalnego w~siebie uogólniamy na $\infty$-zgniatalny kompleks symplicjalne bez promieni; otrzymujemy wniosek, że ścięta krata bez mocnych dopełnień nie zawierająca promienia ma własność punktu stałego. Podrozdział \ref{sec-struktura_zbioru_fixpunktow_bez_promieni} poświęcony jest badaniu struktury zbioru punktów stałych, zarówno pojedynczego odwzorowania, jak i~działania grupy. Rozpoczynamy od~dowodu \mbox{$\mathcal{C}$-rozbieralności} zbioru punktów stałych działania grupy na \mbox{$\mcC$-rozbieralnym} częściowym porządku bez promieni oraz analogicznego wyniku dla kompleksów symplicjalnych. Następnie wykazujemy, że zbiór punktów stałych zachowującego porządek endomorfizmu \mbox{$\mcC$-rozbieralnego} do punktu częściowego porządku bez promieni jest \mbox{$\mcC$-rozbieralny} do punktu; podajemy symplicjalny odpowiednik także tego twierdzenia. Podrozdział kończy się wynikami związanymi ze strukturą zbioru punktów stałych zachowującego porządek odwzorowania skończonego częściowego porządku, którego stowarzyszony kompleks symplicjalny jest zgniatalny. Wykazujemy, że zbiór ten nie musi być spójny; jeśli jednak wspomniany zgniatalny kompleks jest $2$- lub $3$-wymiarowy, to zbiór punktów stałych jest odpowiednio zgniatalny lub acykliczny.
+
+Wyniki rozdziału stanowią przedmiot planowanej publikacji.
+
+%==============================================================
+%==============================================================
+%==============================================================
+
+
+
+\section[Istnienie punktu stałego]{Istnienie punktu stałego odwzorowania przestrzeni bez promieni}\label{sec-istnienie_fixpunktu_bez_promieni}
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+
+\subsection{Znane wyniki}\label{subsec-znane_wyniki_o_fpp_w_rayless_spaces}
+Jest dobrze znanym faktem, wynikającym z~twierdzenia Lefschetza o~punkcie stałym, że jeśli ciągłe odwzorowanie zwartego wielościanu w~siebie jest homotopijne z~funkcją stałą, to ma ono punkt stały. Założenie o~zwartości można znacząco osłabić, o~czym mówi następujący, uzyskany przez Okhezina \cite{Okhezin95}, wynik.
+
+\begin{tw}[{\cite[Theorem 3.2]{Okhezin95}}]\label{tw-okhezina}
+Niech $f\colon X\to X$~będzie ciągłym odwzorowaniem wielościanu $X$. Wówczas spełniony jest co najmniej jeden z~następujących warunków:
+\begin{compactitem}
+\item[---] $\Fix(f)\not=\emptyset$;
+\item[---] $f$~nie jest homotopijne z~odwzorowaniem stałym;
+\item[---] przestrzeń $X$ zawiera promień.
+\end{compactitem}
+\end{tw}
+
+Półprosta $[0,\infty)$ jest absolutnym retraktem, który nie ma własności punktu stałego. Żaden wielościan zawierający domknięty podzbiór homeomorficzny z~$[0,\infty)$ nie może zatem mieć tej własności. Jako wniosek z~twierdzenia \ref{tw-okhezina} otrzymujemy wobec tego następującą charakteryzację ściągalnych wielościanów mających własność punktu stałego.
+
+\begin{tw}[{\cite[Theorem 3.5]{Okhezin95}}]\label{tw-okhezina-brouwera}
+Jeżeli $X$~jest ściągalnym wielościanem, to $X\in\FPP$ wtedy i~tylko wtedy, gdy $X$~jest przestrzenią topologiczną bez promieni.
+\end{tw}
+
+Okhezin \cite{Okhezin95} dowiódł również twierdzeń o~punkcie stałym (w~tym twierdzeń typu Lefschetza) dla innych klas niezwartych przestrzeni bez promieni. Nie jest jednak znana odpowiedź na poniższe pytanie.
+
+\begin{problem}\label{problem-twierdzenie_lefschetza_dla_przestrzeni_bez_promieni}
+Załóżmy, że $K$~jest kompleksem symplicjalnym bez promieni, zaś~$f\colon |K|\to |K|$ jest ciągłym, dopuszczalnym odwzorowaniem. Czy jeśli \mbox{$\Lambda(f)\not=0$}, to $\Fix(f)\not=\emptyset$? Co jeżeli założymy dodatkowo, że $f$~jest realizacją geometryczną odwzorowania symplicjalnego $K\to K$?
+\end{problem}
+
+Interesujące byłoby rozwiązanie nawet następującego, szczególnego przypadku problemu \ref{problem-twierdzenie_lefschetza_dla_przestrzeni_bez_promieni}.
+
+\begin{problem}\label{problem-acykliczny_to_fpp}
+Czy jeżeli $K$~jest acyklicznym kompleksem symplicjalnym bez promieni, to $|K|\in\FPP$ lub $K$~ma własność sympleksu stałego?
+\end{problem}
+
+\begin{comment}
+Szanse powodzenia wydaje się mieć próba połaczenia wyników Okhezina z~ideami rozdziału \ref{chap4}. Autor jest zdania, że poniższe  zagadnienie, choć sformułowane w~mało precyzyjny sposób, ma zadowalające rozwiązanie, korzystające z~twierdzenia \ref{tw-okhezina-brouwera}.
+
+\begin{problem}\label{prob8}
+Zdefiniować klasę kompleksów symplicjalnych ,,lokalnie bez promieni'', których ograniczone (w~odpowiednim sensie) podzbiory nie zawierają promieni. Podać twierdzenie o~istnieniu punktu lub końca stałego przy założeniu, że $K$~jest ściągalnym kompleksem symplicjalnym ,,lokalnie bez promieni'' spełniającym odpowiednik warunku oswojoności do wewnątrz, zaś $f\colon |K|\to |K|$ jest  ciągłym odwzorowaniem o~tej własności, że zbiór $f^{-1}(A)$~jest bez promieni dla każdego podzbioru $A\subseteq |K|$ bez promieni.
+\end{problem}
+\end{comment}
+
+Znane są liczne twierdzenia dotyczące istnienia klik stałych oraz innych rodzajów niezmienniczych podzbiorów w~nieskończonych grafach prostych bez promieni, czy ogólniej w~grafach prostych bez tzw.~promieni izometrycznych, a~nawet w~jeszcze szerszych klasach. Niestety, ich omówienie wykracza poza ramy niniejszej rozprawy. Więcej wiadomości na ten temat odnaleźć można np.~w~artykułach Polata \cite{Polat93,Polat95,Polat96,Polat98,Polat04,Polat09,Polat12,Polat94}.
+
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+
+\subsection{\texorpdfstring{Kompleksy $\infty$-zgniatalne i~uogólnienie twierdzenia Baclawskiego o~punkcie stałym}{Kompleksy ∞-zgniatalne i~uogólnienie twierdzenia Baclawskiego o~punkcie stałym}}\label{subsec-tw_Baclawskiego}
+
+Przypomnijmy, że kompleks symplicjalny $K$~nazywamy $\infty$-zgniatalnym, jeżeli istnieje skojarzenie Morse'a bez promieni malejących na~$K$~o~dokładnie jednej komórce krytycznej (która musi być $0$-wymiarowa). Poniższe twierdzenie, uogólniające analogiczny wynik udowodniony przez Baclawskiego \cite[Theorem 32]{Baclawski12} dla skończonych kompleksów symplicjalnych, jest natychmiastową konsekwencją lematu \ref{lem-niesk_zgniatalnosc_mocny_retrakt_deformacyjny} oraz twierdzenia Okhezina \ref{tw-okhezina-brouwera}.
+\begin{tw}[por. {\cite[Theorem 32]{Baclawski12}}]\label{tw-baclawskiego_o_punkcie_stalym}
+Jeżeli $K$~jest $\infty$-zgniatalnym kompleksem symplicjalnym bez promieni, to $K\in\FSP$.
+\end{tw}
+
+Interesujący jest jednak alternatywny, kombinatoryczny dowód twierdzenia \ref{tw-baclawskiego_o_punkcie_stalym}. Powiedzmy kilka słów o~jego motywacji. W~latach 70-tych ubiegłego wieku ukazał się korzystający z~metod topologii algebraicznej dowód własności punktu stałego skończonych ściętych krat bez dopełnień~\cite{Baclawski79}; w~późniejszym czasie podano alternatywne rozumowania~\cite{Constantin85,Schroder99}. Nie był jednak znany czysto kombinatoryczny dowód, a~jego znalezienie stanowiło jeden z~ważnych otwartych problemów teorii częściowych porządków~\cite{Baclawski81},~\cite[s.~838]{Rival82}. Opublikowany w~2012~przez Baclawskiego \cite{Baclawski12} dowód odpowiednika twierdzenia \ref{tw-baclawskiego_o_punkcie_stalym} dla skończonych kompleksów symplicjalnych stanowi fragment podanego przez niego rozwiązania tego problemu.
+
+Bj{\"o}rner wyraził na konferencji w~Banff w~1981~roku nadzieję \cite[s.~838]{Rival82}, że tego typu dowód uda się uogólnić również na nieskończone, ale o~skończonej wysokości, kraty bez dopełnień, co potwierdzi postawioną w~jego pracy hipotezę \cite[s.~98]{Bjorner81}, że mają one własność punktu stałego. Okazuje się, że dowód Baclawskiego przenosi się bez większych zmian na ścięte kraty bez dopełnień nie zawierające promieni; przedstawienie tego uogólnienia stanowi cel bieżącej sekcji (elementy takiego uogólnienia można również odnaleźć w~niepublikowanych notatkach Baclawskiego \cite{Baclawski}). Choć zmiany w~stosunku do oryginalnego rozumowania Baclawskiego \cite{Baclawski12} nie są duże, ze~względu na terminologię stosowaną przez Baclawskiego, która znacząco różni się od przyjętej w~niniejszej rozprawie, autor zdecydował się przytoczyć dowód w~całości. 
+
+\textbf{Do końca sekcji \ref{subsec-tw_Baclawskiego} zakładamy, że $K=(V,S)$~jest kompleksem symplicjalnym, $\varphi\colon K\to K$ jest odwzorowaniem symplicjalnym, zaś $M$~jest skojarzeniem Morse'a bez promieni malejących i~bez elementów krytycznych na~częściowym porządku $P=(S\cup\{\emptyset\},\subseteq)$.} 
+
+Zauważmy, że $M_*=\{(\tau,\sigma)\in M:\sigma\not=\emptyset\}$ jest skojarzeniem Morse'a bez promieni malejących na $K$~o~dokładnie jednej, $0$-wymiarowej komórce krytycznej. Odwrotnie, jeśli $N$~jest skojarzeniem Morse'a bez promieni malejących na $K$~o~dokładnie jednej, $0$-wymiarowej, komórce krytycznej $v_0$, to $N^*=N\cup\{(v_0,\emptyset)\}$ jest skojarzeniem Morse'a bez promieni malejących i~bez elementów krytycznych na częściowym porządku $P$. Ponadto $(N^*)_*=N$ oraz $(M_*)^*=M$. Możemy więc $M$~traktować jako ,,zredukowane'' skojarzenie Morse'a na~$K$~(por. \cite{Forman02}), zaś $\emptyset$~uważać za ,,sympleks pusty'' kompleksu $K$.
+
+Poniższe definicje zaadaptowane zostały z~pracy Baclawskiego~\cite{Baclawski12}.
+
+Sympleks (być może pusty) $\sigma\in P$ nazywamy \textit{dolnym sympleksem}\index{sympleks!dolny}, jeżeli istnieje $\tau\in P$ takie, że $(\tau,\sigma)\in M$; w~tej sytuacji $\tau$~nazywamy \textit{górnym sympleksem}\index{sympleks!gozzzrny@górny} i~piszemy $\tau=\beta(\sigma)$ oraz $\sigma=\gamma(\tau)$. Zauważmy, że każdy element częściowego porządku $P$~jest sympleksem górnym bądź dolnym, oraz że rodziny górnych i~dolnych sympleksów są rozłączne.
+
+Ścieżkę $(\sigma_0,\ldots,\sigma_m)$ w~grafie skierowanym $\mH_M(P)$ nazywamy \mbox{\textit{$\beta$-ścieżką}}\index{beta-szzzciezzzzka@$\beta$-ścieżka}, o~ile spełnione są następujące warunki:
+\begin{compactitem}
+\item[---] $\sigma_m$ jest górnym sympleksem;
+\item[---] $\sigma_{2i}$ jest dolnym sympleksem oraz $\sigma_{2i+1}=\beta(\sigma_{2i})$ dla $0\leq i < \frac{m}{2}$.
+\end{compactitem}
+Zauważmy, że jeśli $(\sigma_0,\ldots,\sigma_m)$ jest $\beta$-ścieżką, to jest (dzięki brakowi cykli w~grafie $\mH_M(P)$) ścieżką prostą w~$\mH_M(P)$, a~ponadto $\sigma_{2i-1}\succ \sigma_{2i}$ oraz $(\sigma_{2i-1},\sigma_{2i})\not\in M$ dla $0<i\leq \frac{m}{2}$ (gdyż $M$~jest skojarzeniem).
+
+Niech $\mathbb{Z}[P]$~oznacza wolną grupę abelową rozpiętą na zbiorze $P$. Każdy element $a\in \mathbb{Z}[P]$ jest więc funkcją $a\colon P\to \mathbb{Z}$, którą reprezentować można przez formalną sumę postaci: \[a=\sum_{\sigma\in P}a(\sigma)\cdot \sigma,\] gdzie $a(\sigma)\in\mathbb{Z}$ dla wszystkich $\sigma\in P$ oraz $a(\sigma)=0$ dla prawie wszystkich $\sigma\in P$.
+
+Określmy homomorfizm $\str\colon \mathbb{Z}[P]\to \mathbb{Z}[P]$, dla $\sigma\in P$ przyjmując \[\str(\sigma)=\sum_{\substack{(\sigma,\sigma_1,\ldots,\sigma_m)\\\text{jest } \beta\text{-ścieżką}}}\sigma_m.\] Na podstawie lematu \ref{lem-skonczonosc_zbioru_koncow_wychodzacych_z_wierzcholka_sciezek} (por. \cite[Theorem 5.2]{Baclawski}) suma w~powyższym wzorze jest skończona. Zauważmy, że $\str(\sigma)(\tau)\geq 0$ dla wszystkich $\sigma,\tau\in P$. 
+
+Dowód twierdzenia \ref{tw-baclawskiego_o_punkcie_stalym} korzysta z~serii przedstawionych niżej lematów (będących uogólnieniami cytowanych przy nich wyników). 
+
+\begin{lem}[por. {\cite[Theorem 9]{Baclawski12}}]\label{lem-liczenie_str}
+Niech $\sigma\in P$. Jeżeli $\sigma$~jest górnym sympleksem, to \mbox{$\str(\sigma)=\sigma$}. Jeśli $\sigma$~jest dolnym sympleksem, to \[\str(\sigma)=\beta(\sigma) + \sum_{\substack{\tau\prec\beta(\sigma),\\ \tau\not=\sigma}}\str(\tau),\] a ponadto $\str(\tau)(\beta(\sigma))=0$ dla wszystkich $\tau\not=\sigma$, $\tau\prec\beta(\sigma)$ oraz $\str(\sigma)(\rho)=0$ dla wszystkich $\rho\not=\beta(\sigma)$, $\rho\succ\sigma$.
+\end{lem}
+\begin{proof}
+Pierwsza implikacja jest natychmiastową konsekwencją ostatniego warunku definicji $\beta$-ścieżki. 
+
+Dla dowodu drugiej implikacji załóżmy, że $\sigma$~jest dolnym sympleksem. Zauważmy, że $(\sigma,\beta(\sigma))$ jest $\beta$-ścieżką. Ponadto dla każdej $\beta$-ścieżki $(\sigma,\sigma_1,\ldots,\sigma_m)$, gdzie $m\geq 2$, mamy $\sigma_1=\beta(\sigma)$, $\sigma_2\not=\sigma$, $\sigma_2\prec\beta(\sigma)$, a~ciąg $(\sigma_2,\ldots,\sigma_m)$ jest \mbox{$\beta$-ścieżką}. Z~drugiej strony, jeśli $\tau_0\prec\beta(\sigma)$, $\tau_0\not=\sigma$, oraz $(\tau_0,\tau_1,\ldots,\tau_n)$, $n\geq 0$, jest $\beta$-ścieżką, to $(\sigma,\beta(\sigma),\tau_0,\ldots,\tau_n)$ jest $\beta$-ścieżką. Stąd prawdziwy jest podany w~drugiej implikacji lematu wzór na $\str(\sigma)$.
+
+Ustalmy $\tau\prec\beta(\sigma)$ oraz załóżmy, że $\str(\tau)(\beta(\sigma))\not=0$. Istnieje zatem $\beta$-ścieżka $(\sigma_0,\ldots,\sigma_m)$ prowadząca z~$\sigma_0=\tau$~do~$\sigma_m=\beta(\sigma)$. Gdyby $\tau\not=\sigma$, to $(\beta(\sigma),\tau)\not\in M$, więc krawędź $(\beta(\sigma),\tau)\in \mH_M(P)$, co oznaczałoby, że ścieżka $(\sigma_0,\ldots,\sigma_m)$ jest cyklem w~$\mH_M(P)$. Otrzymalibyśmy więc sprzeczność z~założeniem, że $M$~jest skojarzeniem Morse'a.
+
+Podobnie, jeśli $\rho\succ\sigma$ oraz $\rho\not=\beta(\sigma)$, to krawędź $(\rho,\sigma)\in\mH_M(P)$, więc istnienie $\beta$-ścieżki z~$\sigma$~do~$\rho$~oznaczałoby, że $\mH_M(P)$~zawiera cykl.
+\end{proof}
+
+
+\begin{lem}[por. {\cite[Theorem 10]{Baclawski12}}]\label{lem-o_parzystosci}
+Jeżeli $\tau,\rho\in P$ są równoliczne, to liczba $\beta$-ścieżek, które rozpoczynają się w~sympleksie $\rho$~lub sympleksie będącym pokryciem dolnym $\rho$~i~kończą się w~sympleksie~$\tau$, jest parzysta.
+\end{lem}
+\begin{proof}
+Dla $\rho\in P$ niech $m_\rho=\sum_{\delta\preceq \rho}\str(\delta)$. Chcemy wykazać, że dla wszystkich elementów $\rho,\tau\in P$ takich, że $\dim(\rho)=\dim(\tau)$, liczba $m_\rho(\tau)$~jest parzysta. Zauważmy, że jest to prawdą, jeżeli $\tau$~jest dolnym sympleksem: wówczas $m_\rho(\tau)=0$, gdyż każda $\beta$-ścieżka kończy się w~górnym sympleksie.
+
+Wobec lematu \ref{lem-kozlov_lemma} porządek $\subseteq$~w~zbiorze $P$~można rozszerzyć do dobrego porządku $\subseteq^*$ o~tej własności, że jeśli $(\delta,\epsilon)\in M$ dla pewnych $\delta,\epsilon\in P$, to $\delta$~jest pokryciem górnym $\epsilon$ w~porządku $\subseteq^*$. Korzystając z~tego faktu przeprowadzimy dowód lematu metodą indukcji pozaskończonej ze~względu na $\rho$.
+
+Jeżeli $\rho$~jest elementem najmniejszym w~porządku $\subseteq^*$, to $\rho=\emptyset$. Wówczas jeśli $\dim(\rho)=\dim(\tau)$, to $\tau=\emptyset$. Ale $\emptyset$~jest sympleksem dolnym, więc $m_\rho(\tau)=0$. 
+
+Ustalmy $\rho\supseteq^*\emptyset$ oraz $\tau\in P$ takie, że $\dim(\tau)=\dim(\rho)$, i~załóżmy, że dla wszystkich $\tau',\rho'\in P$ o~tej własności, że $\rho'\subset^*\rho$ oraz $\dim(\tau')=\dim(\rho')$, liczba $m_{\rho'}(\tau')$ jest parzysta. Możemy zakładać, że $\tau$~jest górnym sympleksem. Dowód rozbijemy na dwa przypadki: gdy $\rho$~jest górnym sympleksem i~gdy $\rho$~jest dolnym sympleksem.
+
+Jeśli $\rho$~jest górnym sympleksem, to z~lematu \ref{lem-liczenie_str} oraz faktu, że $\gamma(\rho)\prec\rho$, otrzymujemy \begin{align}m_\rho=\str(\rho)+\sum_{\delta\prec\rho}\str(\delta)=\rho+\str(\gamma(\rho))+\sum_{\substack{\delta\prec\rho,\\\delta\not=\gamma(\rho)}}\str(\delta).\label{rownanie_bacl_2}\end{align} Na podstawie~lematu \ref{lem-liczenie_str}, ponieważ $\gamma(\rho)$ jest dolnym sympleksem, zachodzą równości \begin{align}\str(\gamma(\rho))=\beta(\gamma(\rho))+\sum_{\substack{\delta\prec\rho,\\\delta\not=\gamma(\rho)}}\str(\delta).\label{rownanie_bacl_3}\end{align} Zestawiając równania (\ref{rownanie_bacl_2}) oraz (\ref{rownanie_bacl_3}) i~korzystając z~faktu, że $\rho=\beta(\gamma(\rho))$, otrzymujemy
+\[m_\rho=2\left(\rho+\sum_{\substack{\delta\prec\rho,\\\delta\not=\gamma(\rho)}}\str(\delta)\right),\]
+więc $m_\rho(\tau)$ jest liczbą parzystą. (Zauważmy, że w~tym przypadku nie korzystaliśmy z~założenia indukcyjnego.)
+
+Załóżmy, że $\rho$~jest dolnym sympleksem. Ponieważ $\rho\not=\emptyset$, to $\moc{\beta(\rho)}\geq 2$. Rozważmy element $b\in \mathbb{Z}[P]$ zadany wzorem \[b=\sum_{\delta\prec\beta(\rho)}\sum_{\epsilon\prec\delta}\str(\epsilon)=\sum_{v\in \beta(\rho)}\ \sum_{w\in\beta(\rho)\smallsetminus\{v\}}\str\left(\beta(\rho)\smallsetminus\{v,w\}\right),\] w~którym przez $v,w$~oznaczyliśmy wierzchołki sympleksu $\beta(\rho)$. Oczywiście $\str(\beta(\rho)\smallsetminus\{v,w\})=\str(\beta(\rho)\smallsetminus\{w,v\})$, więc $b(\tau)$ jest liczbą parzystą.
+
+Ponieważ $\rho\prec\beta(\rho)$, mamy \begin{align}
+b=\sum_{\epsilon\prec\rho} \str(\epsilon) + \sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}\ \sum_{\epsilon\prec\delta}\str(\epsilon).
+\label{rownanie_bacl_6}
+\end{align}
+Dodając obustronnie $2\str(\rho)$ do~równania (\ref{rownanie_bacl_6}), rozwijając przy użyciu lematu \ref{lem-liczenie_str} jedno z~wyrażeń $\str(\rho)$ i~grupując odpowiednio wyrażenia otrzymujemy:
+\begin{align}
+b+2\str(\rho)&=2\str(\rho)+\sum_{\epsilon\prec\rho}\str(\epsilon)+\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}\ \sum_{\epsilon\prec\delta}\str(\epsilon)\nonumber\\
+&=\beta(\rho)+\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}\str(\delta)+\str(\rho)+\sum_{\epsilon\prec\rho}\str(\epsilon)+\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}\ \sum_{\epsilon\prec\delta}\str(\epsilon)\nonumber\\
+&=\beta(\rho)+m_\rho+\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}m_\delta.\label{rownanie_bacl_11}
+\end{align}
+Ale $\dim(\beta(\rho))>\dim(\rho)=\dim(\tau)$, więc $\beta(\rho)\not=\tau$, i~ze wzoru (\ref{rownanie_bacl_11}) otrzymujemy:
+\begin{align}b(\tau)+2\str(\rho)(\tau)=m_\rho(\tau)+\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}m_\delta(\tau).\label{rownanie_bacl_12}\end{align}
+Ponieważ $(\beta(\rho),\rho)\in M$, element $\rho$~jest pokryciem dolnym $\beta(\rho)$~w~porządku $\subseteq^*$. Relacja $\subseteq^*$ rozszerza porządek $\subseteq$~na~$P$, więc~$\delta\subseteq^*\beta(\rho)$ dla wszystkich $\delta\prec\beta(\rho)$; stąd $\delta\subset^*\rho$ dla $\delta\prec\beta(\rho)$, $\delta\not=\rho$. Z~założenia indukcyjnego liczby $m_\delta(\tau)$ są parzyste. Wiemy zatem, że wszystkie wyrażenia w~równości (\ref{rownanie_bacl_12}), oprócz $m_\rho(\tau)$, są parzyste. Stąd parzysta jest również liczba $m_\rho(\tau)$.
+\end{proof}
+
+W~dalszym rozumowaniu bardzo ważną rolę odgrywa następująca definicja, wprowadzona przez Baclawskiego \cite[Definition 28]{Baclawski12}. \textit{Trafieniem}\index{trafienie} nazywamy parę $(\sigma,\tau)$ elementów $P$~taką, że:
+\begin{compactitem}
+\item[---] $\sigma\preceq\tau$;
+\item[---] zbiory $\varphi(\sigma)$ oraz $\sigma$ są równoliczne;
+\item[---] $\str(\varphi(\sigma))(\tau)\not=0$.
+\end{compactitem}
+\textit{Krotnością}\index{krotnoszzzczzz trafienia@krotność trafienia} trafienia $(\sigma,\tau)$ nazywamy liczbę całkowitą $\str(\varphi(\sigma))(\tau)$.
+
+\begin{lem}[por. {\cite[Proposition 29]{Baclawski12}}]\label{lem-jak_wyglada_hit_od_sympleksu_stalego}
+Jeżeli $\varphi(\sigma)=\sigma$ dla pewnego $\sigma\in P$, to albo $\sigma$~jest górnym sympleksem i~$(\sigma,\sigma)$~jest trafieniem, albo $\sigma$~jest dolnym sympleksem i~$(\sigma,\beta(\sigma))$ jest trafieniem.
+
+Z~drugiej strony, jeśli $(\sigma,\tau)$ jest trafieniem oraz $\varphi(\sigma)=\sigma$ dla pewnych $\sigma,\tau\in P$, to $\tau$~jest górnym sympleksem równym $\sigma$~lub~$\beta(\sigma)$. 
+\end{lem}
+\begin{proof}
+Ustalmy $\sigma\in P$ takie, że $\varphi(\sigma)=\sigma$. 
+
+Jeżeli $\sigma$ jest górnym sympleksem, to wobec lematu \ref{lem-liczenie_str}
+ \[\str(\varphi(\sigma))=\str(\sigma)=\sigma,\] więc $(\sigma,\sigma)$ jest trafieniem i~nie istnieje trafienie $(\sigma,\tau)$ takie, że $\tau\not=\sigma$. 
+
+Załóżmy, że $\sigma$ jest dolnym sympleksem. Na podstawie lematu \ref{lem-liczenie_str})
+ \[\str(\varphi(\sigma))=\str(\sigma)=\beta(\sigma) + \sum_{\substack{\tau\prec\beta(\sigma),\\ \tau\not=\sigma}}\str(\tau).\] W~szczególności $\str(\varphi(\sigma))(\beta(\sigma))\not=0$, więc $(\sigma,\beta(\sigma))$ jest trafieniem. 
+
+Ponadto, jeśli $(\sigma,\tau)$ jest trafieniem dla pewnego $\tau\in P$, to z~definicji trafienia $\tau\succ \sigma$ oraz $\str(\varphi(\sigma))(\tau)=\str(\sigma)(\tau)\not=0$, więc z~lematu \ref{lem-liczenie_str} otrzymujemy $\tau=\beta(\sigma)$.
+\end{proof}
+
+\begin{lem}[por. {\cite[Theorem 31]{Baclawski12}}]\label{lem-even_odd_krotonosci_hitow}\noindent
+\begin{compactenum}[1)]
+\item\label{evodd_krot_cz_1} Dla każdego sympleksu $\tau\in P$ liczba \[\sum_{\substack{\sigma\in P,\\(\sigma,\tau)\text{ jest trafieniem}}}\hspace{-0.5cm}\str(\varphi(\sigma))(\tau),\] będąca sumą krotności trafień, w~których $\tau$~występuje jako druga współrzędna, jest parzysta.
+
+\item\label{evodd_krot_cz_2} Dla każdego sympleksu $\sigma\in P$ liczba \[\sum_{\substack{\tau\in P,\\(\sigma,\tau)\text{ jest trafieniem}}}\hspace{-0.5cm}\str(\varphi(\sigma))(\tau),\]
+będąca sumą krotności trafień, w~których $\sigma$~występuje jako pierwsza współrzędna, jest nieparzysta wtedy i~tylko wtedy, gdy $\varphi(\sigma)=\sigma$.
+\end{compactenum}
+\end{lem}
+\begin{proof}
+Zacznijmy od dowodu \ref{evodd_krot_cz_1}). Ustalmy $\tau\in P$.
+Zbiór $\{\sigma\in P:\sigma\preceq \tau\}$ jest skończony, więc badana suma jest dobrze określoną liczbą naturalną. Rozważmy następujące przypadki.
+\begin{compactitem}
+\item[---] Jeżeli $\dim(\varphi(\tau))<\dim(\tau)-1$, to $\dim(\varphi(\sigma))<\dim(\sigma)$ dla każdego $\sigma\preceq \tau$, więc nie istnieje trafienie, którego drugą współrzędną jest $\tau$.
+\item[---] Jeśli $\dim(\varphi(\tau))=\dim(\tau)-1$, to ponieważ $\varphi$~jest odwzorowaniem symplicjalnym, istnieją dokładnie dwa sympleksy $\sigma_1,\sigma_2\prec\tau$ takie, że $\dim(\varphi(\sigma_i))=\dim(\sigma_i)$ dla $i=1,2$. Ponadto $\varphi(\sigma_1)=\varphi(\sigma_2)=\varphi(\tau)$. Wobec tego krotność trafienia $(\sigma_1,\tau)$ jest równa krotności trafienia $(\sigma_2,\tau)$, więc suma tych krotności jest liczbą parzystą.
+\item[---] Równość $\dim(\varphi(\tau))=\dim(\tau)$ oznacza, że odwzorowanie $\varphi$~jest bijektywne na sympleksach zawartych w~$\tau$, więc \[\{\delta:\delta\preceq \varphi(\tau)\}=\{\varphi(\sigma):\sigma\preceq\tau\}.\] Na podstawie~lematu \ref{lem-o_parzystosci} liczba \[\sum_{\delta\preceq\varphi(\tau)}\str(\delta)(\tau)=\sum_{\sigma\preceq\tau}\str(\varphi(\sigma))(\tau)\] jest parzysta. Ponieważ $\dim(\sigma)=\dim(\varphi(\sigma))$ dla każdego $\sigma\preceq\tau$, jest ona równa sumie krotności trafień, w~których $\tau$~występuje jako druga współrzędna.
+\item[---] Jest niemożliwe, aby $\dim(\varphi(\tau))>\dim(\tau)$, gdyż $\varphi$~jest odwzorowaniem symplicjalnym.
+\end{compactitem}
+
+W~każdym z~przypadków suma krotności trafień, w~których $\tau$~występuje jako druga współrzędna, jest liczbą parzystą. Dowód pierwszej części lematu jest zakończony.
+
+Przystępujemy do dowodu \ref{evodd_krot_cz_2}). Niech $\eta\colon \mathbb{Z}[P]\to\mathbb{Z}$ będzie homomorfizmem grup, zadanym dla $a\in \mathbb{Z}[P]$ wzorem $\eta(a)=\sum_{\tau\in P}a(\tau)$. Ustalmy $\sigma\in P$. Dla $\rho\in P$ takich, że $\dim(\sigma)=\dim(\rho)$, definiujemy $Q(\sigma,\rho)\in \mathbb{Z}[P]$ wzorem \[Q(\sigma,\rho)=\sum_{\tau\succeq\sigma}\str(\rho)(\tau)\cdot \tau.\] Zauważmy, że jeśli $\dim(\varphi(\sigma))\not=\dim(\sigma)$, to z~definicji nie istnieje trafienie mające $\sigma$~za pierwszą współrzędną. Możemy więc zakładać, że $\dim(\varphi(\sigma))=\dim(\sigma)$. Wówczas
+\begin{align}\sum_{\substack{\tau\in P,\\(\sigma,\tau)\text{ jest trafieniem}}}\hspace{-0.5cm}\str(\varphi(\sigma))(\tau)=\eta(Q(\sigma,\varphi(\sigma))).\label{bacl-eq-pierwszy}\end{align}
+Wykażemy, że $\eta(Q(\sigma,\rho))$ jest liczbą nieparzystą wtedy i~tylko wtedy, gdy $\rho=\sigma$, co wobec równości (\ref{bacl-eq-pierwszy}) zakończy dowód.
+
+Rozważmy najpierw przypadek $\rho=\sigma$. Jeżeli $\sigma$~jest górnym sympleksem, to z~lematu \ref{lem-liczenie_str} mamy $\str(\sigma)=\sigma$, więc $\eta(Q(\sigma,\sigma))=1$. Jeśli natomiast $\sigma$~jest dolnym sympleksem i~$Q(\sigma,\sigma)(\tau)\not=0$ dla pewnego $\tau\in P$, to $\tau$~jest górnym sympleksem, więc $\tau\not=\sigma$, i~z~definicji $Q(\sigma,\sigma)$ wiemy, że $\tau\succ\sigma$. Ponieważ $\str(\sigma)(\tau)\not=0$, z~lematu \ref{lem-liczenie_str} otrzymujemy $\tau=\beta(\sigma)$ oraz $\eta(Q(\sigma,\sigma))=1$.
+
+W~ogólnym przypadku, gdy $\rho\in P$~może być różne od $\sigma$ (ale $\dim(\rho)=\dim(\sigma)$), przeprowadzimy indukcję ze względu na $\eta(\str(\rho))$. Zauważmy, że dla każdego $\rho\in P$ takiego, że $\dim(\rho)=\dim(\sigma)$, zachodzi nierówność $\eta(\str(\rho))\geq 1$. Ponadto, wobec lematu \ref{lem-liczenie_str}, $\eta(\str(\rho))=1$~jedynie w~dwóch przypadkach: gdy $\rho=\emptyset$ lub gdy $\rho$~jest górnym sympleksem. Jeżeli $\rho=\emptyset$, to $\sigma=\emptyset$, więc, jak wyżej wykazaliśmy, $\eta(Q(\sigma,\rho))=\eta(Q(\emptyset,\emptyset))=1$. Jeśli natomiast $\rho$~jest górnym sympleksem, to $Q(\sigma,\rho)(\tau)\not=0$ tylko wtedy, gdy $\tau=\rho=\sigma$, i~wówczas $\eta(Q(\sigma,\rho))=\eta(Q(\sigma,\sigma))=1$.
+
+Załóżmy, że $\eta(\str(\rho))>1$ (więc $\rho$~jest dolnym sympleksem) oraz dla wszystkich $\delta\in P$ takich, że $\dim(\sigma)=\dim(\delta)$ oraz $\eta(\str(\delta))<\eta(\str(\rho))$, liczba $\eta(Q(\sigma,\delta))$ jest nieparzysta wtedy i~tylko wtedy, gdy $\sigma=\delta$. Możemy zakładać, że $\sigma\not=\rho$. Z~lematu \ref{lem-liczenie_str} otrzymujemy równość \[\str(\rho)=\beta(\rho)+\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}\str(\delta).\] Wobec tego \begin{align}Q(\sigma,\rho)=\begin{cases}\beta(\rho)+\sum\limits_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}Q(\sigma,\delta), & \text{jeżeli }\sigma\preceq \beta(\rho),\\ \sum\limits_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}Q(\sigma,\delta), & \text{jeżeli } \sigma\not\preceq\beta(\rho).\end{cases}\label{wzor_na_Q}\end{align} Zauważmy, że $\eta(\str(\delta))<\eta(\str(\rho))$ dla $\delta\prec\beta(\rho), \delta\not=\rho$; z~założenia indukcyjnego liczby $\eta(Q(\sigma,\delta))$ są więc nieparzyste wtedy~i~tylko wtedy, gdy $\sigma=\delta$. 
+
+Jeżeli $\sigma\preceq \beta(\rho)$, to ponieważ założyliśmy, że $\rho\not=\sigma$, ze wzoru (\ref{wzor_na_Q}) otrzymujemy \begin{align*}\eta(Q(\sigma,\rho))&=\eta\left(\beta(\rho)+Q(\sigma,\sigma)+\!\!\!\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho,\sigma}}\! Q(\sigma,\delta)\right)\\&=1+\eta(Q(\sigma,\sigma))+\!\!\!\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho,\sigma}}\!\eta(Q(\sigma,\delta)).\end{align*} Jeśli natomiast $\sigma\not\preceq\beta(\rho)$, to ze wzoru (\ref{wzor_na_Q}) dostajemy \[\eta(Q(\sigma,\rho))=\eta\left(\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}Q(\sigma,\delta)\right)=\sum_{\substack{\delta\prec\beta(\rho),\\\delta\not=\rho}}\eta(Q(\sigma,\delta)).\] Ponieważ wyrażenia $\eta(Q(\sigma,\delta))$ są w~powyższych wzorach parzyste, zaś $\eta(Q(\sigma,\sigma))$ nieparzyste, w~obu przypadkach liczba $\eta(Q(\sigma,\rho))$ jest parzysta, co kończy dowód indukcyjny, a~zarazem i~dowód lematu.
+\end{proof}
+
+Zauważmy, że założenie, iż $K$~jest kompleksem symplicjalnym, zaś $\varphi\colon K\to K$ jest odwzorowaniem symplicjalnym, wykorzystaliśmy w~istotny sposób jedynie w~dowodach lematów \ref{lem-o_parzystosci} oraz \ref{lem-even_odd_krotonosci_hitow}. Dla dowodu pozostałych dwóch spośród powyższych lematów wystarczają o~wiele słabsze założenia dotyczące porządku~$P$. 
+
+Możemy udowodnić twierdzenie \ref{tw-baclawskiego_o_punkcie_stalym}.
+
+\begin{proof}[Dowód (twierdzenia \ref{tw-baclawskiego_o_punkcie_stalym}).]
+Rozważmy graf prosty $H$, którego wierzchołkami są trafienia o~nieparzystej krotności (które krótko nazywać będziemy \textit{nieparzystymi trafieniami}), zaś krawędziami zbiory zawierające dwa takie trafienia mające wspólną pierwszą albo drugą współrzędną.
+
+Wykażemy, że istnieje niepusta rodzina skończonych ścieżek prostych w~grafie $H$~o~parami rozłącznych zbiorach elementów, których początki i~końce są nieparzystymi trafieniami $(\sigma,\tau)$ takimi, że $\varphi(\sigma)=\sigma$.
+
+Określimy w~tym celu podzbiory $F_1, F_2$ zbioru krawędzi grafu $H$. Wobec lematu \ref{lem-even_odd_krotonosci_hitow} dla każdego $\tau\in P$ liczba \[\sum_{\substack{\sigma\in P,\\(\sigma,\tau)\text{ jest trafieniem}}}\hspace{-0.5cm}\str(\varphi(\sigma))(\tau)\] jest parzysta. Stąd parzysta jest również liczba \[\sum_{\substack{\sigma\in P,\\(\sigma,\tau)\text{ jest nieparzystym trafieniem}}}\hspace{-1.5cm}\str(\varphi(\sigma))(\tau),\]
+więc parzysta jest liczba 
+\[\sum_{\substack{\sigma\in P,\\(\sigma,\tau)\text{ jest nieparzystym trafieniem}}}\hspace{-1.5cm}1,\] będąca mocą zbioru tych nieparzystych trafień, których drugą współrzędną jest~$\tau$. Dla każdego sympleksu $\tau\in P$ wybierzmy dowolny podział $R_1(\tau)$ tego zbioru na \mbox{$2$-elementowe} podzbiory. Każdy z~tych podzbiorów jest krawędzią grafu~$H$. Podobnie, dla każdego $\sigma\in P$ takiego, że $\varphi(\sigma)\not=\sigma$, zbiór nieparzystych trafień o~pierwszej współrzędnej równej $\sigma$ ma parzystą liczbę elementów (korzystamy ponownie z~lematu \ref{lem-even_odd_krotonosci_hitow}), możemy więc wybrać jego podział $R_2(\sigma)$ na $2$-elementowe podzbiory. Są one krawędziami grafu~$H$.  Przyjmujemy \[F_1=\bigcup_{\tau\in P} R_1(\tau),\quad F_2=\bigcup_{\substack{\sigma\in P,\\ \varphi(\sigma)\not=\sigma}}R_2(\sigma).\]
+Na podstawie lematów \ref{lem-jak_wyglada_hit_od_sympleksu_stalego}, \ref{lem-even_odd_krotonosci_hitow} dla każdego $\sigma\in P$ takiego, że $\varphi(\sigma)=\sigma$, istnieje jedyne $\tau\in P$ takie, że $(\sigma,\tau)$ jest trafieniem i~trafienie to jest nieparzyste. Nie należy ono do żadnej krawędzi ze zbioru $F_2$~oraz należy do~dokładnie jednej krawędzi z~$F_1$.
+
+Rozważmy podgraf $H_F\subseteq H$, którego wierzchołkami są wszystkie nieparzyste trafienia, zaś zbiorem krawędzi jest $F=F_1\cup F_2$.
+
+Wykażemy, że $H_F$~jest grafem bez promieni. Przypuśćmy, że istnieje nieskończona ścieżka prosta $\left((\sigma_i,\tau_i)\right)_{i\in\mN}$ w~$H_F$. Przyjmijmy $\rho_{2i}=\sigma_i$, $\rho_{2i+1}=\tau_i$ dla wszystkich $i\in\mN$. Ponieważ $\sigma\preceq \tau$ dla $(\sigma,\tau)$ będącego trafieniem, ciąg $(\rho_i)_{i\in\mN}$ jest nieskończoną ścieżką w~grafie porównywalności $\Comp(P)$. Ścieżka ta nie musi być prosta. Zauważmy jednak, że dla wszystkich $\rho\in P$ istnieje skończenie wiele trafień mających $\rho$~za pierwszą lub drugą współrzędną, więc dla każdego $\rho\in P$ zbiór $I(\rho)=\{i\in\mN:\rho_i=\rho\}$ jest skończony. Ciąg $\left(\rho_{i_k}\right)_{k\in\mN}$, gdzie $i_0=0$ oraz $i_{k+1}=\max\left(I\left(\rho_{i_k}\right)\right)+1$, jest ścieżką prostą w~$\Comp(P)$, co jest sprzeczne z~założeniem o~braku promieni w~$P$.  Wobec tego nie istnieje nieskończona ścieżka prosta w~grafie $H_F$.
+
+Oczywiście $F_1\cap F_2=\emptyset$. Zauważmy ponadto, że każde nieparzyste trafienie jest elementem dokładnie jednej krawędzi ze zbioru~$F_1$, zaś każde nieparzyste trafienie $(\sigma,\tau)$ takie, że $\varphi(\sigma)\not=\sigma$, jest elementem dokładnie jednej krawędzi z~$F_2$. Wobec tego, jeśli $(\sigma,\tau)$ jest nieparzystym trafieniem, to o~ile $\varphi(\sigma)\not=\sigma$, należy ono do dokładnie dwóch krawędzi ze zbioru $F$, zaś gdy $\varphi(\sigma)=\sigma$, trafienie to należy do dokładnie jednej krawędzi z~$F$. 
+
+Wobec tego każda składowa spójności $H_F$~jest albo ,,cyklem'', albo skończoną ,,ścieżką'', przy czym jeśli nieparzyste trafienie $(\sigma,\tau)$ należy do danej składowej spójności grafu $H_F$~oraz $\varphi(\sigma)=\sigma$, to składowa ta jest ,,ścieżką'', a~$(\sigma,\tau)$ jest jednym z~jej końców. 
+
+Ponieważ $\varphi(\emptyset)=\emptyset$, składowa $H_F$~zawierająca wierzchołek $(\emptyset,\beta(\emptyset))$ jest skończoną ,,ścieżką'' o~końcu w~tym wierzchołku. Istnieje zatem trafienie $(\sigma,\tau)$, będące jej drugim końcem, przy czym $\sigma\not=\emptyset$ oraz $\varphi(\sigma)=\sigma$.
+\end{proof}
+
+\begin{wn}[por. {\cite[Corollary 33]{Baclawski12}}]\label{wn-baclawskiego_o_punkcie_stalym}
+Jeżeli $Q$~jest częściowym porządkiem bez promieni o~tej własności, że $\mK(Q)$~jest $\infty$-zgniatalnym kompleksem symplicjalnym, to $Q\in\FPP$.
+\end{wn}
+
+Poniższy wniosek wynika natychmiast z~twierdzenia \ref{tw-baclawskiego-o-kratach-bez-mocnych-dopelnien} oraz wniosku \ref{wn-baclawskiego_o_punkcie_stalym}. Daje on częściową odpowiedź na pytanie o~własność punktu stałego ściętych krat bez dopełnień o~skończonej wysokości \cite[s.~98]{Bjorner81}. 
+
+\begin{wn}\label{wn-o_fpp_dla_krat}
+Jeżeli $L$~jest kratą bez mocnych dopełnień i~bez promieni, to $\check{L}\in\FPP$.
+\end{wn}
+
+Dowód wniosku \ref{wn-o_fpp_dla_krat} jest ,,kombinatoryczny''. Autor nie widzi  jednak sposobu jego uogólnienia na wszystkie ścięte kraty bez dopełnień o~skończonej wysokości. Być może dałoby się zastosować w~tym celu wspomniane na końcu~sekcji \ref{subsec-znane_wyniki_o_fpp_w_rayless_spaces} wyniki Polata?
+
+%==============================================================
+%==============================================================
+%==============================================================
+
+
+
+\section[Struktura zbioru punktów stałych]{Struktura zbioru punktów stałych w~przestrzeniach bez promieni}\label{sec-struktura_zbioru_fixpunktow_bez_promieni}
+Niniejszy podrozdział poświęcony jest wynikom związanym ze strukturą zbioru punktów stałych, przy czym zajmujemy się w~nim zarówno punktami stałymi działania grupy, jak i~punktami stałymi pojedynczego odwzorowania. 
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+
+\subsection{Rozbieralność zbioru punktów stałych działania grupy}
+Literatura dotycząca struktury zbioru punktów stałych dopuszczalnego działania grupy na kompleksie symplicjalnym o~ściągalnej realizacji geometrycznej (lub kompleksie mającym zbliżone własności: acyklicznym, zgniatalnym itp.) jest dość bogata. Przypomnijmy niektóre wyniki związane z~tym zagadnieniem.
+
+Symplicjalne działanie grupy na skończonym kompleksie symplicjalnym o~ściągalnej (a~nawet będącej dyskiem) realizacji geometrycznej nie musi mieć punktów stałych~\cite{Floyd59}. Z~drugiej strony, jeśli $\Gamma$~jest grupą o~rzędzie będącym potęgą pewnej liczby pierwszej $p$, działającą w~sposób dopuszczalny na skończonym, $\mathbb{Z}_p$-acyklicznym kompleksie symplicjalnym $K$, to kompleks symplicjalny $K^\Gamma$~jest $\mathbb{Z}_p$-acykliczny \cite{Smith42}. Oliver \cite{Oliver75} scharakteryzował te skończone kompleksy symplicjalne $K$, które są kompleksami punktów stałych dopuszczalnego działania grupy $\Gamma$~o~rzędzie nie będącym potęgą liczby pierwszej na ściągalnym (bądź $\mathbb{Z}$-acyklicznym) kompleksie symplicjalnym; warunkiem koniecznym i~dostatecznym jest przystawanie charakterystyki Eulera $\chi(K)\equiv 1$~modulo pewna liczba, zależna jedynie od grupy $\Gamma$. Istnieją wyniki mówiące o~strukturze zbioru punktów stałych działania grupy na kompleksie symplicjalnym $K$~o~niskim wymiarze. Przykładowo, przy założeniu, że kompleks $K$ jest acykliczny oraz $\dim(K)\leq 2$, lub zgniatalny i~$\dim(K)\leq 3$, zbiór punktów stałych jest pusty lub acykliczny \cite{Segev93,Segev94}.
+
+Na~tym tle wyróżnia się własność $\mCtriang$-rozbieralności: Barmak i~Minian \cite[Theorem 6.5]{Barmak12} oraz niezależnie od nich Hensel, Osajda i~Przytycki \cite[Theorem 1.2]{Hensel14} udowodnili, że jeśli grupa działa na \mbox{$\mCtriang$-rozbieralnym} do punktu kompleksie symplicjalnym, to zbiór punktów stałych działania indukowanego na jego realizacji geometrycznej jest ściągalny (podobne idee były obecne w~pracy Duffusa, Poguntke i~Rivala \cite{Duffus80a}). Co więcej, jeżeli grupa działa w~sposób dopuszczalny na $\mCtriang$-rozbieralnym do punktu, skończonym kompleksie symplicjalnym, to sympleksy stałe względem tego działania tworzą $\mCtriang$-rozbieralny do punktu podkompleks.
+
+Wykażemy, że wynik ten uogólnia się na $\mCtriang$-rozbieralne do punktu kompleksy symplicjalne bez promieni, korzystając przy tym (podobnie jak Barmak i~Minian \cite{Barmak12}) z~analogicznego rezultatu dla $\mcC$-rozbieralnych do punktu częściowych porządków (czyli ściągalnych przestrzeni Aleksandrowa).
+
+\begin{stw}[por.~{\cite[Lemma 6.4]{Barmak12}}]\label{stw-sciaglana_g_przestrzen_sciagalne_punkty_stale}
+Jeśli $P$~jest częściowym porządkiem bez promieni z~zadanym działaniem grupy $\Gamma$~oraz $P\dism *$, to $P^\Gamma\dism *$.  
+\end{stw}
+\begin{proof}
+Ustalmy porządek bez promieni $P$~oraz działanie grupy $\Gamma$~na $P$. Załóżmy, że $P\dism \{p\}$ dla pewnego $p\in P$. Wobec wniosku \ref{wn-charakteryzacja-mocnych-retraktow-deformacyjnych} porządek $P$, traktowany jako przestrzeń Aleksandrowa, jest ściągalny. Na podstawie twierdzenia \ref{wniosek_klasyfikacyjny} istnieje \mbox{$\mcC$-rdzeń} $Q\subseteq P$ taki, że $P\dism^{\Gamma} Q$, a~ponadto zachodzi homotopijna równoważność $Q\simeq P$. Ponieważ $Q\simeq P\simeq \{p\}$, $\mcC$-rdzenie $Q$~oraz $\{p\}$~są, wobec twierdzenia \ref{wniosek_klasyfikacyjny}, izomorficzne, czyli $Q=\{q\}$ dla pewnego elementu $q\in P$. Ale to oznacza, że $P\dism^\Gamma \{q\}$, więc element $q\in P^\Gamma$.
+
+Niech $\alpha$~będzie liczbą porządkową, zaś $\left(r_{\phi,\phi+1}\colon P_{\phi}\to P_{\phi+1}\right)_{\phi<\alpha}$ ciągiem ekwiwariantnych retrakcji \mbox{$\mcC$-rozbierającym} $P$~do $\{q\}$. Wówczas $P_{\phi}\cap P^\Gamma=P_\phi^\Gamma$ dla każdego $\phi<\alpha$, zatem $\bigl(r_{\phi,\phi+1}\big|_{P_{\phi}^\Gamma}\colon P_{\phi}^\Gamma\to P_{\phi+1}^\Gamma\bigr)_{\phi<\alpha}$ jest ciągiem $\mathcal{C}$-rozbierającym zbiór $P^\Gamma$~do $\{q\}$.
+\end{proof}
+
+Ze stwierdzenia \ref{stw-sciaglana_g_przestrzen_sciagalne_punkty_stale} wynika w~szczególności, że jeśli grupa $\Gamma$~działa na częściowym porządku bez promieni $P$, to zbiór $P^\Gamma\not=\emptyset$. Wobec tego nie istnieje wolne działanie grupy na ściągalnej przestrzeni Aleksandrowa bez promieni.
+
+\begin{stw}[por.~{\cite[Theorem 6.5]{Barmak12}, \cite[Theorem 1.2]{Hensel14}}]\label{stw-rozbieralny_g_kompleks_rozbieralne_punkty_stale}
+Jeśli $K$~jest kompleksem symplicjalnym bez promieni, z~zadanym symplicjalnym działaniem grupy $\Gamma$ oraz \mbox{$K\dism *$}, to zbiór $|K|^\Gamma$~punktów stałych działania $\Gamma$~indukowanego na $|K|$~jest ściągalny. Ponadto, jeśli działanie $\Gamma$~na $K$~jest dopuszczalne, to $K^\Gamma\dism *$.
+\end{stw}
+\begin{proof}
+Ustalmy $\mCtriang$-rozbieralny kompleks symplicjalny $K$~bez promieni oraz działanie grupy $\Gamma$~na $K$.
+
+Udowodnimy najpierw stwierdzenie przy założeniu, że działanie $\Gamma$~na $K$~jest dopuszczalne. Wówczas $\mP(K)^\Gamma=\mP\left(K^\Gamma\right)$. Wobec lematu \ref{lem-rozbieralnosc_tu_i_tu} częściowy porządek $\mP(K)\dism *$, więc $\mP(K)^\Gamma\dism *$ na podstawie~stwierdzenia \ref{stw-sciaglana_g_przestrzen_sciagalne_punkty_stale}. Ponownie korzystając z~lematu \ref{lem-rozbieralnosc_tu_i_tu} otrzymujemy $\mK\left(\mP\left(K^\Gamma\right)\right)\dism *$. Zgodnie ze~stwierdzeniem \ref{stw-rozbieralany_kompleks_wtw_gdy_podzial_barycentryczny} oznacza to, że $K^\Gamma\dism *$, więc przestrzeń $|K|^\Gamma=|K^\Gamma|$ jest ściągalna na podstawie stwierdzenia \ref{stw-zgniatalny_jest_sciagalny}.
+
+Jeśli działanie grupy $\Gamma$~na kompleksie symplicjalnym $K$~nie jest dopuszczalne, to działanie indukowane na podziale barycentrycznym $\mK(\mP(K))$ tego kompleksu jest już dopuszczalne, przy czym \[|K|^\Gamma=|\mK(\mP(K))|^\Gamma=\bigl|\mK(\mP(K))^\Gamma\bigr|.\] Ponadto $\mK(\mP(K))\dism *$ na podstawie stwierdzenia \ref{stw-rozbieralany_kompleks_wtw_gdy_podzial_barycentryczny}. Teza wynika zatem z~pierwszej części dowodu.
+\end{proof}
+
+
+Niech $K=(V,S)$~będzie $1$-wymiarowym kompleksem symplicjalnym. Przez $\mathcal{Y}(K)=\left(V,S'\right)$ oznaczmy kompleks symplicjalny na tym samym co $K$~zbiorze wierzchołków i~taki, że \[S'=\left\{\sigma\subseteq V:0<\moc{\sigma}<\aleph_0 \text{ oraz }\{v,w\}\in S\text{ dla wszystkich } v,w\in\sigma\right\}.\] Zauważmy, że działanie grupy na $K$~indukuje działanie tej grupy na $\mathcal{Y}(K)$, zadane na zbiorze wierzchołków w~ten sam sposób.
+Hensel, Osajda i~Przytycki \cite[Question 2.11]{Hensel14} postawili  pytanie (w~języku teorii grafów; tu formułujemy je w~sposób równoważny), czy jeśli $K$~jest \mbox{$1$-wymiarowym} kompleksem symplicjalnym z~ustalonym działaniem grupy oraz kompleks symplicjalny $\mathcal{Y}(K)$~nie zawiera nieskończonych sympleksów i~jest lokalnie rozbieralny, to istnieje punkt stały działania tej grupy indukowanego na $|\mathcal{Y}(K)|$.
+
+Odpowiedź na postawione przez nich pytanie jest negatywna. 
+
+\begin{ex}\label{ex-hensel_osajda_przytycki_counterexample}
+Niech $X$~będzie częściowym porządkiem z~przykładu \ref{ex-slabo_rozb_ale_nie_rozb}. Ponieważ częściowy porządek $X$~jest lokalnie rozbieralny, na podstawie stwierdzenia \ref{stw-slaba_rozbieralnosc_tu_i_tu} lokalnie rozbieralny jest również kompleks~$\mK(X)$. Graf prosty $\Comp(X)$~możemy traktować jako $1$-wymiarowy kompleks symplicjalny. Oczywiście $\mK(X)=\mathcal{Y}\left(\Comp(X)\right)$ i~kompleks ten nie zawiera nieskończonych sympleksów.  Odwzorowanie ,,przekazania kapeluszy'', dla $m\geq 1$ zadane wzorami \[\widehat{m}\mapsto m,\quad m\mapsto \widehat{m},\] wyznacza działanie grupy dwuelementowej $\mathbb{Z}_2$ na $X$. Działanie indukowane na $|\mK(X)|$~nie ma punktów stałych.
+\end{ex}
+
+Zauważmy, że kompleks symplicjalny $\mK(X)$~z~przykładu \ref{ex-hensel_osajda_przytycki_counterexample} ma nieskończony wymiar. Autor nie wie, jaka jest odpowiedź na pytanie Hensela, Osajdy~i~Przytyckiego \cite[Question 2.11]{Hensel14} w~przypadku kompleksów o~skończonym wymiarze. 
+
+Poniższy wynik daje natomiast pozytywną odpowiedź na to pytanie przy założeniu, że $1$-wymiarowy kompleks $K$~jest bez promieni.
+
+\begin{stw}
+Niech $K$~będzie $1$-wymiarowym kompleksem symplicjalnym bez promieni, z~zadanym działaniem grupy $\Gamma$. Jeżeli kompleks symplicjalny $\mathcal{Y}(K)$ jest lokalnie rozbieralny, to przestrzeń $|\mathcal{Y}(K)|^\Gamma$ jest ściągalna.
+\end{stw}
+\begin{proof}
+Prowadząc rozumowanie podobne do dowodu stwierdzenia \ref{stw-porzadek_bez_promieni_wtw_kompleks_symplicjalny} można wykazać, że $\mathcal{Y}(K)$~jest kompleksem symplicjalnym bez promieni. Załóżmy, że kompleks $\mathcal{Y}(K)$ jest lokalnie rozbieralny. Wobec stwierdzenia \ref{stw-kompl_sympl_lokalnie_rozb_wtw_rozb} oznacza to, że $\mathcal{Y}(K)\dism *$, więc na podstawie stwierdzenia \ref{stw-rozbieralny_g_kompleks_rozbieralne_punkty_stale} przestrzeń $|\mathcal{Y}(K)|^\Gamma$ jest ściągalna.
+\end{proof}
+
+\begin{problem}\label{prob9}
+Niech $P$~będzie lokalnie skończonym częściowym porządkiem z~zadanym działaniem skończonej grupy $\Gamma$. Czy jeśli porządek $P$~jest \mbox{$\mathcal{C}$-korozbieralny}, to $\mathcal{C}$-korozbieralny jest również zbiór punktów stałych $P^\Gamma$ działania $\Gamma$~na~$P$?
+\end{problem}
+
+Zauważmy, że w~problemie \ref{prob9} ważne jest założenie o~skończoności grupy $\Gamma$; przykładowo, istnieje działanie bez punktów stałych grupy liczb całkowitych na obustronnie nieskończonej palisadzie z~przykładu \ref{buildable_not_dismantlable}.
+
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+
+
+\subsection{Rozbieralność zbioru punktów stałych odwzorowania}\label{subsec-rozbieralnosc_zbioru_fixpunktow_odwzorowania}
+Obok wyników związanych ze strukturą zbioru punktów stałych działania grupy są w~teorii częściowych porządków znane twierdzenia o~strukturze zbioru $\Fix(f)$, gdzie $f\colon P\to P$ jest zachowującym porządek odwzorowaniem, określonym na skończonym zbiorze częściowo uporządkowanym $P$. 
+
+Wiadomo na przykład \cite[Theorem 1.1]{Baclawski79}, że charakterystyka Eulera $\chi(\Fix(f))$ jest równa liczbie Lefschetza $\lambda(f)$. Od dość dawna znane jest twierdzenie \cite[Theorem 3]{Duffus80a} mówiące, że jeśli $P\dism *$, to $\Fix(f)\dism *$. Nieco świeższy wynik dotyczy wprowadzonego przez  Schr{\"o}dera \cite{Schroder99} pojęcia ,,connected collapsibility''. Skończony częściowy porządek $P$~nazywamy \textit{connectedly collapsible}\index{czezzzszzzciowy porzazzzdek@częściowy porządek!connectedly collapsible@\textit{connectedly collapsible}}, o~ile $P$~jest jednoelementowy lub istnieje punkt $p\in P$ taki, że zbiory $P\smallsetminus \{p\}$ oraz $\hat{p}\mathord{\uparrow}\cup\ \hat{p}\mathord{\downarrow}$ są \textit{connectedly collapsible}. Okazuje się, że jeśli $P$~jest \textit{connectedly collapsible}, to zbiór $\Fix(f)$~jest niepusty i~spójny \cite[Proposition 5.6]{Schroder99}. 
+%(Jest problemem otwartym, czy zbiór $\Fix(f)$~jest również \textit{connectedly collapsible} \cite[s.~136]{Schroder03}.) 
+Ponadto klasyczne twierdzenie Tarskiego \cite[Theorem 1]{Tarski55} mówi, że jeśli $L$~jest (być może nieskończoną) kratą zupełną, zaś $g\colon L\to L$ jest odwzorowaniem zachowującym porządek, to $\Fix(g)$~jest kratą zupełną.
+
+Poniżej dowodzimy uogólnienia jednego z~wyżej wymienionych faktów na częściowe porządki bez promieni: wykazujemy, że jeśli $P$~jest porządkiem bez promieni, $f\colon P\to P$ jest odwzorowaniem zachowującym porządek oraz $P\dism *$, to $\Fix(f)\dism *$. (W~terminach przestrzeni Aleksandrowa powiedzielibyśmy, że zbiór punktów stałych ciągłego przekształcenia ściągalnej przestrzeni Aleksandrowa bez promieni w~siebie jest ściągalny.) Odnotujmy, że jest dobrze znanym faktem, iż zbiór ten jest niepusty; wynika to z~twierdzenia \ref{tw-Crozbieralnosc_zachowuje_FPP} (można również podać alternatywne dowody korzystające ze stwierdzenia \ref{stw-zgniatalny_jest_sciagalny} i~twierdzenia \ref{tw-okhezina-brouwera} lub stwierdzenia \ref{stw-rozb_to_zgniatalne} i~twierdzenia \ref{tw-baclawskiego_o_punkcie_stalym}).
+
+\begin{tw}\label{tw-fixed_point_set_of_a_map_is_dismantlable}
+Niech $(P,\leq)$~będzie częściowym porządkiem bez promieni, zaś $f\colon P\to P$ zachowującym porządek odwzorowaniem. Jeżeli $P\dism *$, to $\Fix(f)\dism *$.
+\end{tw}
+\begin{proof}
+Załóżmy, że $P\dism *$. Wobec twierdzenia \ref{build_if_dism} oraz lematu \ref{lem-Ckorozb_wtw_Ikorozb} częściowy porządek $P$~jest $\mathcal{I}$-korozbieralny.\footnote{Korozbieralność $P$~nie jest kluczowa dla dowodu. Moglibyśmy przeprowadzić go nie korzystając z~tej własności; rozumowanie indukcyjne byłoby wówczas odrobinę bardziej skomplikowane.} Ustalmy liczbę porządkową $\beta$~oraz ciąg $\mathcal{I}$-retrakcji $(s_{\phi+1,\phi}\colon Q_{\phi+1}\to Q_{\phi})_{\phi<\beta}$ korozbierający $P$~ze zbioru jednoelementowego $Q_0$. Dla $\psi\leq\beta$ niech $S_\psi=\revcomp\left(s_{\phi+1,\phi}\right)_{\psi\leq \phi<\beta}:P\to Q_{\psi}$. Przyjmijmy dla $\phi\leq\beta$ oznaczenie $\Fix_\phi=\Fix\left(S_\phi \circ f\right)$. Na podstawie twierdzenia \ref{tw-Crozbieralnosc_zachowuje_FPP} każdy ze zbiorów $\Fix_\phi$~jest niepusty.
+
+Dla każdej liczby porządkowej $\phi\leq\beta$ wykażemy za pomocą indukcji pozaskończonej, że $\Fix_\phi\dism *$. Konstruować przy tym będziemy ciąg zachowujących porządek odwzorowań  pomocniczych $\left(g_{\phi,\phi+1}\colon \Fix_\phi\to \Fix_{\phi+1}\right)_{\phi<\beta}$.
+
+Dla $\phi=0$ zbiór $\Fix_\phi=\Fix_0$ jest jednoelementowy, zatem $\Fix_0\dism *$.
+
+Ustalmy liczbę porządkową $0<\phi_0\leq \beta$ i~załóżmy, że $\Fix_\psi\dism *$ dla wszystkich liczb porządkowych $\psi<\phi_0$, a~ponadto jeśli $\psi+1<\phi_0$, to określone jest zachowujące porządek odwzorowanie $g_{\psi,\psi+1}\colon \Fix_{\psi}\to \Fix_{\psi+1}$, przy czym:
+\begin{compactitem}
+\item[---] ciągi $\left(g_{\psi,\psi+1}\right)_{\rho\leq\psi<\rho'}$ są nieskończenie składalne dla wszystkich $\rho<\rho'<\phi_0$;
+\item[---] $g_{\psi,\psi+1}(x)\sim x$ dla wszystkich $\psi<\psi+1<\phi_0$ i~wszystkich $x\in\Fix_{\psi}$.
+\end{compactitem}
+
+Jeżeli $\phi_0=\psi_0+1$ jest następnikiem, to istnieje punkt $x_{\phi_0}$~nieredukowalny w~$Q_{\phi_0}$ i~taki, że $Q_{\phi_0}=Q_{\psi_0}\cup\{x_{\phi_0}\}$. Dla ustalenia uwagi załóżmy, że $x_{\phi_0}$ jest nieredukowalny nad pewnym punktem $y_{\phi_0}\in Q_{\phi_0}$ oraz $s_{\phi_0,\psi_0}\left(x_{\phi_0}\right)=y_{\phi_0}$. Przyjmijmy dla skrócenia zapisów oznaczenia: $\Fix=\Fix_{\psi_0}$, $\Fix'=\Fix_{\phi_0}$, $x=x_{\phi_0}$, $y=y_{\phi_0}$, $S=S_{\psi_0}$, $S'=S_{\phi_0}$, $s=s_{\phi_0,\psi_0}$. Zauważmy, że $S=s\circ S'$.
+
+Zbiór $\Fix'$ jest równy jednemu ze zbiorów: $\Fix$, $\Fix\cup\{x\}$, $\Fix\smallsetminus\{y\}$, \mbox{$(\Fix\cup\{x\})\smallsetminus\{y\}$}. W~każdym z~tych przypadków wykażemy, że $\Fix'\dism *$ oraz określimy zachowującą porządek funkcję $g_{\psi_0,\phi_0}\colon \Fix\to \Fix'$.
+
+\begin{enumerate}[I($\phi_0$).]
+\item\label{a} Jeżeli $\Fix'=\Fix$, to $\Fix'\dism *$ z~założenia indukcyjnego. Przyjmujemy $g_{\psi_0,\phi_0}=\id_{\Fix}\colon \Fix\to \Fix'$.
+
+\item\label{b} Gdy $\Fix'=\Fix\cup\{x\}$, mamy do rozważenia dwie możliwości: $y\in \Fix$ oraz $y\not\in \Fix$. 
+
+Jeśli $y\in \Fix$, to punkt $x$~jest nieredukowalny nad $y$~w~zbiorze $\Fix'$.
+
+ Jeśli natomiast $y\not\in \Fix$, to $(S\circ f)(y)\not=y\not=(S'\circ f)(y)$. Ponieważ $y\leq x$, mamy $(S'\circ f)(y)\leq (S'\circ f)(x)=x$. Ale $(S'\circ f)(y)\not=x$, gdyż to oznaczałoby, że $(S\circ f)(y)=y$. Ponieważ $x$~jest nieredukowalny nad $y$~w~$Q_{\phi_0}$, otrzymujemy $(S'\circ f)(y)<y$. Na podstawie twierdzenia Abiana-Browna \ref{tw-abiana_browna} istnieje największy punkt stały odwzorowania $(S'\circ f)$ mniejszy od $y$. Oznaczmy ten punkt przez $y_0$. Element $x$~jest nieredukowalny nad $y_0$~w~zbiorze $\Fix'$.
+
+W~obu przypadkach $\Fix'\dism \Fix\smallsetminus\{x\}=\Fix$. Ponieważ z~założenia indukcyjnego $\Fix\dism *$, to również $\Fix'\dism *$. Za \mbox{$g_{\psi_0,\phi_0}\colon \Fix\hookrightarrow \Fix'$} przyjmujemy włożenie.
+
+\item\label{c} Jeśli $\Fix'=\Fix\smallsetminus\{y\}$, możemy zakładać, że $y\in \Fix$, gdyż w~przeciwnym wypadku zachodzi przypadek \ref{a}($\phi_0$).
+
+Mamy $y\in\Fix$, $y\not\in\Fix'$, czyli $(S\circ f)(y)=y$ oraz $(S'\circ f)(y)\not=y$; zatem $(S'\circ f)(y)=x>y$. Na podstawie twierdzenia Abiana-Browna \ref{tw-abiana_browna} istnieje najmniejszy punkt stały odwzorowania $(S'\circ f)$ większy od $y$. Oznaczmy go przez $y_1$. Element $y_1\not\in\{x,y\}$, więc jest również punktem stałym funkcji $(S\circ f)$, tzn.~$y_1\in\Fix$. Ponadto $y$~jest nieredukowalny pod $y_1$~w~$\Fix$. Za $g_{\psi_0,\phi_0}\colon \Fix\to \Fix'$ przyjmujemy $\mathcal{I}$-retrakcję przeprowadzającą $y$~na~$y_1$. 
+
+Ponieważ $\Fix\dism \Fix'$ oraz, z~założenia indukcyjnego, $\Fix\dism *$, to na podstawie wniosku \ref{wn-charakteryzacja-mocnych-retraktow-deformacyjnych} istnieją homotopijne równoważności \mbox{$*\simeq \Fix\simeq \Fix'$}. Przestrzeń $\Fix'$~jest więc ściągalna, czyli $\Fix'\dism *$ zgodnie z~twierdzeniem \ref{wniosek_klasyfikacyjny}.
+
+\item\label{d} Jeżeli $\Fix'=(\Fix\cup\{x\})\smallsetminus\{y\}$, to możemy zakładać, że $y\in \Fix$ (w~przeciwnym razie zachodzi przypadek \ref{b}($\phi_0$)). Zatem: \[(S\circ f)(y)=y,\quad (S'\circ f)(y)=x,\quad (S\circ f)(x)=y,\quad (S'\circ f)(x)=x.\] Ustalmy element $z\in \Fix$. Jeżeli $z>x$, to $z>y$, gdyż $x>y$. Podobnie, jeżeli $z<y$, to $z<x$. Jeśli $z<x$, to $z\leq y$, ponieważ $x$~jest nieredukowalny nad $y$~w~$Q_{\phi_0}$. Jeżeli natomiast $z>y$, to $z=(S'\circ f)(z)\geq (S'\circ f)(y)=x$. Zatem \[\left\{z\in \Fix'\smallsetminus\{x\}:z\sim x\right\}=\bigl\{z\in \Fix\smallsetminus\{y\}:z\sim y\bigr\}.\] Odwzorowanie $g_{\psi_0,\phi_0}\colon \Fix\to \Fix'$ zadajemy dla $z\in \Fix$ wzorem \[g_{\psi_0,\phi_0}(z)=\begin{cases}x, &\text{jeżeli } z=y;\\
+z & \text{w przeciwnym wypadku.}
+\end{cases}\]
+Jest ono izomorfizmem częściowych porządków. Ponieważ z~założenia indukcyjnego $\Fix\dism *$, mamy również $\Fix'\dism *$. 
+\end{enumerate}
+Nieskończona składalność ciągów $\left(g_{\psi,\psi+1}\right)_{\rho\leq\psi<\rho'}$ dla wszystkich $\rho<\rho'<\phi_0$ jest oczywistą konsekwencją założenia indukcyjnego. Zauważmy ponadto, że w~każdym wypadku $g_{\psi_0,\phi_0}(z)\sim z$ dla wszystkich $z\in\Fix$.
+
+Jeżeli $\phi_0\leq\alpha$ jest graniczną liczbą porządkową, to nietrudno spostrzec, iż \[\Fix_{\phi_0}=\bigcup_{\rho<\phi_0}\bigcap_{\rho<\psi<\phi_0}\Fix_{\psi}.\] Ponadto, jeśli $\rho<\psi<\phi_0$ oraz $x\in \Fix_{\rho}$, $x\not\in \Fix_{\psi}$, to $x\not\in \Fix_{\phi}$ dla wszystkich $\psi\leq \phi\leq \phi_0$.
+
+Ustalmy $\rho<\phi_0$. Dla każdego $\rho<\rho'<\phi_0$ ciągi $\left(g_{\psi,\psi+1}\right)_{\rho\leq \psi<\rho'}$ są nieskończenie składalne na podstawie założenia indukcyjnego; przyjmijmy oznaczenie $G_{\rho'}=\infcomp \left(g_{\psi,\psi+1}\right)_{\rho\leq \psi<\rho'} \colon \Fix_{\rho}\to \Fix_{\rho'}$. Wykażemy, że ciąg $\left(g_{\psi,\psi+1}\right)_{\rho\leq \psi<\phi_0}$ jest nieskończenie składalny. Zauważmy, że nieskończona składalność tego ciągu jest równoważna temu, że dla każdego $x\in \Fix_{\rho}$ ciąg $\left(G_{\rho'}(x)\right)_{\rho\leq \rho'<\phi_0}$ jest od pewnego miejsca stały. Ustalmy $x\in \Fix_{\rho}$ i~przypuśćmy, że ciąg ten nie od pewnego momentu jest stały. Określić zatem możemy nieskończony ciąg liczb porządkowych $(\rho_n)_{n\in\mN}$ przyjmując $\rho_0=\rho$ oraz \[\rho_n=\min\left\{\rho'>\rho_{n-1}:G_{\rho'}(x)\not=G_{\rho_{n-1}}(x)\right\}\] dla $n\geq 1$. Zauważmy, że jeśli $n\geq 1$, to liczba porządkowa $\rho_n$~jest następnikiem, $\rho_n=\tilde{\rho}_n+1$. Ponieważ \[G_{\rho_{n+1}}(x)=g_{\tilde{\rho}_{n+1},\rho_{n+1}}\left(G_{\rho_n}(x)\right)\sim G_{\rho_n}(x)\] dla każdego $n\in \mN$, to ciąg $\left(G_{\rho_n}(x)\right)_{n\in\mN}$ jest nieskończoną ścieżką prostą w~$\Comp(P)$, co jest sprzeczne z~założeniem o~braku promieni w~$P$.
+%to można chyba zrobić ogólniej, bez raylessności, ale lepiej dla dismantlingu może niż budowania... pieśń przyszłości: X \dism *, to \Fix(f) jest s-ściągalny
+
+Udowodnimy, że przestrzeń $\Fix_{\phi_0}$ jest s-ściągalna. Niech $D$~będzie skończonym częściowym porządkiem, zaś $k\colon D\to \Fix_{\phi_0}$ zachowującym porządek odwzorowaniem. Istnieje $\psi_0<\phi_0$ takie, że $k(D)\subseteq \Fix_{\psi_0}$; niech $k'\colon D\to \Fix_{\psi_0}$ oznacza odwzorowanie o~tym samym co $k$~wykresie. Ponieważ \mbox{$\Fix_{\psi_0}\dism *$}, przestrzeń $\Fix_{\psi_0}$ jest s-ściągalna (wniosek \ref{wn-rozbieralnosc_wtw_slaba_rozbieralnosc}), więc istnieje homotopia \mbox{$h\colon D\times \I\to \Fix_{\psi_0}$} między $k'$~a~pewnym odwzorowaniem stałym $c\colon D\to \Fix_{\psi_0}$. Niech $G=\infcomp\left(g_{\psi,\psi+1}\right)_{\psi_0\leq\psi<\phi_0}\colon \Fix_{\psi_0}\to \Fix_{\phi_0}$. Funkcja $G\circ h\colon D\times \I\to \Fix_{\phi_0}$ jest homotopią między $k=G\circ k'$ a~funkcją stałą $G\circ c\colon D\to \Fix_{\phi_0}$.
+
+Wykazaliśmy, że przestrzeń $\Fix_{\phi_0}$ jest s-ściągalna; stąd $\Fix_{\phi_0}\dism *$ na podstawie wniosku \ref{wn-rozbieralnosc_wtw_slaba_rozbieralnosc}.
+\end{proof}
+
+Twierdzenie \ref{tw-fixed_point_set_of_a_map_is_dismantlable} ma swój symplicjalny odpowiednik.
+
+\begin{wn}
+Niech $\varphi\colon K\to K$ będzie odwzorowaniem symplicjalnym określonym na kompleksie symplicjalnym bez promieni $K$. Jeżeli $K\dism *$, to zbiór $\Fix(|\varphi|)$ jest ściągalny oraz kompleks symplicjalny $\Fix(\mK(\mP(\varphi)))\dism *$.
+\end{wn}
+\begin{proof}
+Załóżmy, że $K\dism *$. Wobec lematu \ref{lem-rozbieralnosc_tu_i_tu} porządek $\mP(K)\dism *$. Zatem $\Fix(\mP(\varphi))\dism *$ zgodnie z~twierdzeniem \ref{tw-fixed_point_set_of_a_map_is_dismantlable}. Ponownie korzystając z~lematu \ref{lem-rozbieralnosc_tu_i_tu} otrzymujemy $\mK(\Fix(\mP(\varphi)))\dism *$. Zauważmy jednak, że $\mK(\Fix(\mP(\varphi))=\Fix(\mK(\mP(\varphi)))$; kompleks $\Fix(\mK(\mP(\varphi)))$ jest więc \mbox{$\mCtriang$-rozbieralny} do punktu. Na podstawie stwierdzenia \ref{stw-zgniatalny_jest_sciagalny} jego realizacja geometryczna $|\Fix(\mK(\mP(\varphi)))|$ jest przestrzenią ściągalną. Ale $\Fix(|\varphi|)=\Fix(|\mK(\mP(\varphi))|)=|\Fix(\mK(\mP(\varphi)))|$, co kończy dowód.
+\end{proof}
+
+Twierdzenie \ref{tw-fixed_point_set_of_a_map_is_dismantlable} częściowo odpowiada na pytanie Schr{\"o}dera \cite[s.~136]{Schroder03} o~\mbox{$\mathcal{C}$-rozbieralność} zbioru punktów stałych odwzorowania zachowującego porządek określonego na nieskończonym, \mbox{$\mathcal{C}$-rozbieralnym} zbiorze częściowo uporządkowanym. Można postawić analogiczne pytanie dotyczące \mbox{$\mathcal{C}$-korozbieralności}; aby odpowiedź na to pytanie nie była w~oczywisty sposób negatywna trzeba jednak założyć, że zbiór punktów stałych jest niepusty. (Nietrudno bowiem znaleźć określone na obustronnie nieskończonej palisadzie z~przykładu \ref{buildable_not_dismantlable}, zachowujące porządek odwzorowanie, które nie ma punktów stałych.)
+
+\begin{problem}\label{prob10}
+Czy jeżeli $P$~jest częściowym porządkiem takim, że $*\codism P$, zaś $f\colon P\to P$ jest zachowującym porządek odwzorowaniem o~tej własności, że $\Fix(f)\not=\emptyset$, to $*\codism \Fix(f)$? Co jeśli o~zbiorze częściowo uporządkowanym $P$~założymy dodatkowo, że jest łańcuchowo zupełny lub nie zawiera nieskończonych łańcuchów?
+\end{problem}
+
+Kolejny problem dotyczy możliwości uogólnienia jednego spośród wyników o~strukturze zbioru punktów stałych wspomnianych na początku sekcji; stanowi on szczególny przypadek pytania postawionego przez Schr{\"o}dera \cite[Open Question 4]{Schroder99}. Wydaje się, że do jego rozwiązania można spróbować zastosować metody podobne do wykorzystanych w~dowodzie twierdzenia \ref{tw-fixed_point_set_of_a_map_is_dismantlable}.
+
+\begin{problem}\label{problem-connected_collapsibility}
+Czy pojęcie \textit{connected collapsibility} można przenieść na porządki bez promieni i~udowodnić, że zbiór punktów stałych zachowującego porządek odwzorowania określonego na \textit{connectedly collapsible} porządku bez promieni jest spójny?
+\end{problem}
+
+
+
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+
+
+\subsection{Zgniatalność a~struktura zbioru punktów stałych odwzorowania}
+W~dowodzie twierdzenia \ref{tw-baclawskiego_o_punkcie_stalym} punkty stałe odwzorowania symplicjalnego określonego na $\infty$-zgniatalnym kompleksie symplicjalnym łączy się w~pary. Baclawski \cite[Section 9]{Baclawski12} wyraził nadzieję, że w~przypadku, gdy odwzorowanie symplicjalne pochodzi od zachowującego porządek odwzorowania określonego na skończonym zbiorze częściowo uporządkowanym, mogłoby to pozwolić na znalezienie skojarzenia Morse'a na zbiorze punktów stałych, co dało mu podstawy do sformułowania następującej hipotezy.
+
+\begin{hipoteza}[{\cite[Conjecture 34]{Baclawski12}}]\label{hipoteza-bacl} Jeżeli $P$~jest skończonym częściowym porządkiem o~tej własności, że $\mK(P)$~jest zgniatalnym kompleksem symplicjalnym, zaś $f\colon P\to P$ jest odwzorowaniem zachowującym porządek, to $\mK(\Fix(f))$ jest zgniatalnym kompleksem symplicjalnym.
+\end{hipoteza}
+
+Wykazujemy niżej, że hipoteza \ref{hipoteza-bacl}, jak również jej słabsze wersje zaproponowane przez Baclawskiego \cite{Baclawskia} w~korespondencji z~autorem, są nieprawdziwe. Z~drugiej strony, przy założeniu, że $\dim(\mK(P))\leq 3$, uzyskujemy wyniki częściowo potwierdzające tę hipotezę.
+
+Kontrprzykład dla oryginalnej hipotezy Baclawskiego jest podać stosunkowo nietrudno. (W~przykładzie tym nadużywamy nieco notacji, domyślności Czytelnika pozostawiając precyzyjne definicje rozważanych kompleksów symplicjalnych.)
+\begin{ex}
+Niech $K$~będzie skończonym, zgniatalnym kompleksem symplicjalnym mającym~tę własność, że istnieje podkompleks $L\subseteq K$ taki, że $K$~zgniata się do $L$, ale żadna triangulacja wielościanu $|L|$~nie jest zgniatalna. (Kompleks $K$~o~tej własności można znaleźć już w~wymiarze $3$, patrz \cite{Benedetti13a}.) Niech $K_1=K\times\{1\}$, $K_{-1}=K\times\{-1\}$ będą rozłącznymi kopiami kompleksu $K$. Rozważmy kompleks symplicjalny $M=K_1\cup K_{-1}\big/\mathord{\sim_L}$, gdzie $\sim_L$~jest najmniejszą relacją równoważności na zbiorze wierzchołków kompleksu $K_1\cup K_{-1}$ taką, że $(v,1)\sim_L (v,-1)$ dla wszystkich wierzchołków $v\in L$. (Innymi słowy $M$~powstaje przez utożsamienie kopii kompleksu $L$~zawartych w~$K_1$~oraz $K_{-1}$.) Ponieważ $K\searrow L$, to $M\searrow K_1$. Ale $K_1\searrow *$, więc kompleks $M$~jest zgniatalny.
+
+Niech $\varphi\colon M\to M$ będzie odwzorowaniem symplicjalnym zadanym dla $v\in K$, $i\in\{-1,1\}$~wzorem $\varphi\left([(v,i)]\right)=[(v,-i)]$ oraz niech $P=\mP(M)$, $f=\mP(\varphi)$. Kompleks $\mK(P)=\mK(\mP(M))$ jest zgniatalny (a~nawet ma własność \textit{non-evasiveness}) na podstawie twierdzenia \ref{tw_welkera_o_zgniatalnosci_podzialu}. Ale kompleks symplicjalny $\mK(\Fix(f))$, izomorficzny $\mK(\mP(L))$, nie jest zgniatalny, gdyż jest triangulacją wielościanu $|L|$.
+\end{ex}
+
+Hipoteza Baclawskiego \ref{hipoteza-bacl} jest zatem fałszywa, nawet jeśli założymy dodatkowo, że kompleks $\mK(P)$ jest \textit{non-evasive}. Można pytać, czy jeśli $\mK(P)\searrow *$, to o~zbiorze punktów stałych $\Fix(f)$ można powiedzieć coś więcej poza tym, że jest on niepusty? Ponieważ ze zgniatalności $\mK(P)$ wynika, że kompleks $\mK(P)$ jest acykliczny, wiadomo \cite[Theorem 1.1]{Baclawski79}, że charakterystyka Eulera $\chi(\Fix(f))=1$. Interesujące są jednak na przykład postawione przez Baclawskiego \cite{Baclawskia} pytania, czy zbiór $\Fix(f)$ jest spójny oraz czy przestrzeń $|\mK(\Fix(f))|$ jest ściągalna bądź acykliczna? 
+
+Negatywnej odpowiedzi na te pytania pomoże udzielić następujący szczególny przypadek twierdzenia z~pracy Olivera \cite{Oliver75}.
+
+\begin{tw}[{\cite{Oliver75}}]\label{tw_olivera}
+Niech $\mathbb{Z}_m$ oznacza skończoną grupę cykliczną rzędu $m$, nie będącego potęgą liczby pierwszej, zaś $L$~niech będzie skończonym kompleksem symplicjalnym. Istnienie kompleksu symplicjalnego $K$~o~ściągalnej realizacji geometrycznej, z~zadanym dopuszczalnym działaniem grupy $\mathbb{Z}_m$ takim, że $K^{\mathbb{Z}_m}=L$, jest równoważne temu, że charakterystyka Eulera $\chi(L)=1$.
+\end{tw}
+
+Zauważmy, że zbiór $X^\Gamma$~punktów stałych działania grupy cyklicznej $\Gamma$~na przestrzeni topologicznej $X$~to po prostu zbiór punktów stałych automorfizmu przestrzeni $X$~odpowiadającego generatorowi tej grupy. Symbolicznie, jeśli \mbox{$\rho\colon \Gamma\to \Aut(X)$} jest homomorfizmem grup (tzn.~działaniem $\Gamma$~na $X$), zaś $\Gamma=\langle g\rangle$ dla pewnego $g\in \Gamma$, to $X^\Gamma=\Fix(\rho(g))$.
+
+Przypomnijmy, że jeżeli $K$~jest kompleksem symplicjalnym, zaś $\sigma$~jego sympleksem, to symbolem $(\sigma)$~oznaczamy zawarty w~$|K|$~otwarty sympleks odpowiadający abstrakcyjnemu sympleksowi $\sigma$. Otwarte sympleksy wyznaczają strukturę regularnego CW kompleksu na przestrzeni $|K|$. Dla $n\geq 0$ na przestrzeni $|K|\times \I^n$ istnieje struktura regularnego CW kompleksu o~następującej rodzinie komórek:
+\[\left\{(\sigma)\times J_1\times\ldots \times J_n:\sigma\in K,\ J_1,\ldots, J_n\in \big\{\{0\},\{1\},(0,1)\big\}\right\}.\]
+
+Następujacy wynik, który również okaże się pomocny, pochodzi z~pracy Adiprasito i~Benedettiego \cite{Adiprasito13a}. 
+
+\begin{tw}[{\cite[Corollary II.1.6]{Adiprasito13a}}]\label{tw_benedetti-adiprasito_o_zgniatalnosci_produktu_z_odcinkiem}
+Jeżeli realizacja geometryczna kompleksu symplicjalnego $K$~jest ściągalna, to istnieje liczba $n\in\mN$~taka, że regularny CW kompleks $|K|\times \I^n$ jest zgniatalny.
+\end{tw}
+
+Tak przygotowani możemy odpowiedzieć na postawione wyżej pytania o~własności zbioru $\Fix(f)$ dla $f\colon P\to P$~będącego odwzorowaniem zachowującym porządek, przy założeniu, że $\mK(P)$ jest zgniatalnym kompleksem symplicjalnym.
+
+\begin{ex}\label{ex-mocne_obalenie_baclawskiego}
+Niech $L$~będzie dowolnym, skończonym kompleksem symplicjalnym o~charakterystyce Eulera równej $1$. (Zauważmy, że kompleks $L$~nie musi spójny.) Na podstawie twierdzenia \ref{tw_olivera} istnieją kompleks symplicjalny $K$~o~ściągalnej realizacji geometrycznej oraz automorfizm symplicjalny $\varphi\colon K\to K$ takie, że $\Fix(\varphi)=L$.
+
+Wobec twierdzenia \ref{tw_benedetti-adiprasito_o_zgniatalnosci_produktu_z_odcinkiem} dla pewnej liczby naturalnej $n$~regularny CW kompleks \mbox{$|K|\times \I^n$} jest zgniatalny. Rozważmy odwzorowanie \mbox{$|\varphi|\times \id_{\I^n}\colon |K|\times \I^n\to |K|\times \I^n$}; zauważmy, że przeprowadza ono komórki na komórki, a~zatem indukuje w~oczywisty zachowujące porządek sposób odwzorowanie $f\colon \mP\left(|K|\times \I^n\right)\to \mP\left(|K|\times \I^n\right)$; ponadto $\Fix(f)=\mP\left(|L|\times \I^n\right)$.
+
+Kompleks symplicjalny $\mK(\mP(|K|\times \I^n))$ jest zgniatalny (por.~\cite[Theorems 1.4, 12.1]{Forman98}), więc kompleks symplicjalny $(\mK\circ\mP)^2(|K|\times \I^n)$ jest \textit{non-evasive} na podstawie twierdzenia \ref{tw_welkera_o_zgniatalnosci_podzialu}. Jeśli jednak kompleks $L$~nie jest spójny, to zbiór $\Fix(\mP(\mK(f)))=(\mP\circ\mK\circ\mP)\left(|L|\times \I^n\right)$ również nie jest spójny, a~zatem nie jest acykliczny ani (tym bardziej) ściągalny.  
+\end{ex}
+
+Wykazaliśmy, że w~ogólności hipoteza Baclawskiego oraz jej słabsze wersje są fałszywe (jednocześnie odpowiadając negatywnie na pytanie z~pracy Schr{\"o}dera \cite[Open Question 11]{Schroder99} o~acykliczność zbioru punktów stałych endomorfizmu $\mathbb{Z}$-acyklicznego częściowego porządku). Udowodnimy jednak ich prawdziwość w~niskich wymiarach.
+
+Kluczowym narzędziem będą następujące dwa twierdzenia Segeva \cite{Segev93,Segev94}.
+
+\begin{tw}[{\cite[Theorem 1]{Segev93}}]\label{tw-segeva_o_acyklicznych}
+Jeżeli grupa $\Gamma$~działa w~sposób dopuszczalny na skończonym, acyklicznym, co najwyżej $2$-wymiarowym kompleksie symplicjalnym $K$, to podkompleks $K^\Gamma$~jest pusty albo acykliczny.
+\end{tw}
+
+\begin{tw}[{\cite[Theorem 4.2]{Segev94}}]\label{tw-segeva_o_zgniatalnych}
+Jeżeli grupa $\Gamma$~działa w~sposób dopuszczalny na skończonym, zgniatalnym, co najwyżej $2$-wymiarowym kompleksie symplicjalnym $K$, to podkompleks $K^\Gamma$~jest zgniatalny.
+\end{tw}
+
+
+Wzorując się na artykule Segeva \cite{Segev94} dla $n\in\mN$ symbolem $\mathscr{K}_n$ oznaczmy klasę wszystkich skończonych kompleksów symplicjalnych $K$~o~tej własności, że $\dim(K)\leq n$ oraz $K\searrow L$ dla pewnego podkompleksu $L\subseteq K$, $\dim(L)\leq n-1$. W~szczególności, jeśli $\dim(K)\leq n-1$, to $K\in\mathscr{K}_n$. Poniższy lemat uogólnia obserwację z~pracy Segeva \cite[(3.6)]{Segev94}.
+
+\begin{lem}\label{lem-podkompleks_Kn_jest_w_Kn}
+Jeżeli $n\in\mN$, $K\in\mathscr{K}_n$ oraz $N$~jest podkompleksem $K$, to $N\in \mathscr{K}_n$.
+\end{lem}
+\begin{proof}
+Ustalmy liczbę $n\in\mN$, kompleks symplicjalny $K\in\mathscr{K}_n$ oraz podkompleks $N\subseteq K$. Jeśli \mbox{$\dim(N)\leq n-1$}, nie mamy czego dowodzić. Możemy zatem założyć, że $\dim(N)=\dim(K)=n$. 
+
+Ponieważ $K\searrow L$ dla pewnego podkompleksu $L\subseteq K$, $\dim(L)\leq n-1$, to istnieje (na podstawie lematu \ref{lem-charakteryzacja_inf_zgniatalnosci}) skojarzenie Morse'a $M$~na $K$, komórki krytyczne względem którego tworzą podkompleks $L$. Niech \[M_N=\{(\tau,\sigma)\in M:\sigma,\tau\in N \text{ oraz } \dim(\tau)=n\}.\] Łatwo zauważyć, że $M_N$~jest skojarzeniem Morse'a na $N$. Jeżeli $\tau$~jest \mbox{$n$-wymiarowym} sympleksem w~$N$, to istnieje \mbox{$(n-1)$-wymiarowy} sympleks \mbox{$\sigma\in K$}~taki, że $(\tau,\sigma)\in M$. Ale $N$~jest podkompleksem $K$~oraz \mbox{$\tau\in N$}, więc również \mbox{$\sigma\in N$}. Zatem $(\tau,\sigma)\in M_N$. Wobec tego $N\searrow \tilde{N}$, gdzie $\tilde{N}$~jest \mbox{$(n-1)$-wymiarowym} kompleksem powstałym z~$N$~przez usunięcie wszystkich sympleksów $\tau,\sigma$ takich, że $(\tau,\sigma)\in M_N$.
+\end{proof}
+
+Następne dwa lematy również pochodzą z~artykułu Segeva \cite{Segev94}.
+
+\begin{lem}[{\cite[Corollary 3.7]{Segev94}}]\label{lem-segev_Kn_i_podkompleks_G_niezmienniczy}
+Jeżeli $n\in \mN$ oraz dane jest dopuszczalne działanie grupy $\Gamma$~na kompleksie symplicjalnym $K$~należącym do $\mathscr{K}_n$, to istnieje \mbox{$\Gamma$-niezmienniczy} podkompleks $L\subseteq K$ taki, że $\dim(L)\leq n-1$, $K\searrow L$ oraz $K^\Gamma\searrow L^\Gamma$.
+\end{lem}
+
+\begin{lem}[{\cite[(4.3)]{Segev94}}]\label{lem-segev_podkompleks_2wymiarowego_acyklicznego}
+Niech $K$~będzie skończonym, $\mathbb{Z}$-acyklicznym, co najwyżej \mbox{$2$-wymiarowym} kompleksem symplicjalnym, zaś $L\subseteq K$ jego spójnym podkompleksem o~charakterystyce Eulera $\chi(L)=1$. Wówczas kompleks $L$~jest $\mathbb{Z}$-acykliczny. Ponadto, jeśli kompleks $K$~jest zgniatalny, to $L$~jest zgniatalny.
+\end{lem}
+
+Możemy przystąpić do dowodu hipotezy Baclawskiego w~niskich wymiarach.
+
+\begin{stw}\label{stw-baclawski_dla_wymiarow_2_i_3}
+Niech $P$~będzie skończonym częściowym porządkiem, zaś $f\colon P\to P$ zachowującym porządek odwzorowaniem. Załóżmy, że kompleks symplicjalny $\mK(P)$~jest zgniatalny. Wówczas:
+\begin{compactitem}
+\item[---] jeżeli $\dim(\mK(P))\leq 2$, to kompleks symplicjalny $\mK(\Fix(f))$ jest zgniatalny;
+\item[---] jeżeli $\dim(\mK(P))= 3$, to kompleks symplicjalny $\mK(\Fix(f))$ jest $\mathbb{Z}$-acykliczny.
+\end{compactitem}
+\end{stw}
+\begin{proof}
+Na podstawie lematu \ref{lem-o_retrakcji_z_silnia} funkcja $r=f^{\moc{P}!}\colon P\to r(P)$ jest retrakcją, $f\big|_{r(P)}\colon r(P)\to r(P)$ jest automorfizmem oraz $\Fix(f)=\Fix\left(f\big|_{r(P)}\right)$. Rozważmy cykliczną podgrupę $\Gamma\subseteq \Aut(r(P))$ generowaną przez automorfizm $f\big|_{r(P)}\in \Aut(r(P))$, i~działającą na $r(P)$~w~oczywisty sposób.
+Ponieważ przestrzeń $|\mK(P)|$~jest ściągalna, przestrzeń $|\mK(r(P))|$ jest również ściągalna jako jej retrakt.
+
+Załóżmy, że $\dim(\mK(P))\leq 2$. Wobec lematu \ref{lem-segev_podkompleks_2wymiarowego_acyklicznego} kompleks $\mK(r(P))$ jest zgniatalny. Zgodnie z~twierdzeniem \ref{tw-segeva_o_zgniatalnych} zgniatalny jest kompleks $\mK(r(P))^\Gamma$. Ale zachodzą równości \[\mK(r(P))^\Gamma=\mK\left(r(P)^\Gamma\right)=\mK\left(\Fix\left(f\big|_{r(P)}\right)\right)=\mK(\Fix(f)),\] co kończy dowód w~tym przypadku.
+
+Załóżmy zatem, że $\dim(\mK(P))=3$. Ponieważ $\mK(P)$~jest zgniatalnym kompleksem symplicjalnym, $\mK(P)\in\mathscr{K}_3$. Zatem $\mK(r(P))\in\mathscr{K}_3$ na podstawie lematu \ref{lem-podkompleks_Kn_jest_w_Kn}. Wobec lematu \ref{lem-segev_Kn_i_podkompleks_G_niezmienniczy} istnieje $\Gamma$-niezmienniczy podkompleks $L\subseteq \mK(r(P))$ taki, że $\dim(L)\leq 2$, $\mK(r(P))\searrow L$ oraz $\mK(r(P))^\Gamma\searrow L^\Gamma$.  Ponieważ $\mK(r(P))\searrow L$, ze ściągalności kompleksu $\mK(r(P))$ wynika, że podkompleks $L$~jest ściągalny. Grupa $\Gamma$~jest  cykliczna, więc z~twierdzenia Lefschetza o~punkcie stałym \ref{tw-lefschetza_o_punkcie_stalym} otrzymujemy $L^\Gamma\not=\emptyset$. Wobec~lematu \ref{tw-segeva_o_acyklicznych} kompleks $L^\Gamma$~jest \mbox{$\mathbb{Z}$-acykliczny}, a~ponieważ $\mK(r(P))^\Gamma\searrow L^\Gamma$, to \mbox{$\mathbb{Z}$-acykliczny} jest również kompleks symplicjalny $\mK(r(P))^\Gamma=\mK(\Fix(f))$.
+\end{proof}
+
+\begin{wn}\label{wn-baclawski_wym_2_3_dla_kompleksow_symplicjalnych}
+Niech $K$~będzie skończonym, zgniatalnym kompleksem symplicjalnym, zaś $\varphi\colon K\to K$ odwzorowaniem symplicjalnym. Wówczas:
+\begin{compactitem}
+\item[---] jeśli $\dim(K)\leq 2$, to przestrzeń $\Fix(|\varphi|)$ jest ściągalna oraz kompleks symplicjalny $\mK(\Fix(\mP(\varphi)))$ jest zgniatalny;
+\item[---] jeśli $\dim(K)=3$, to przestrzeń $\Fix(|\varphi|)$ jest acykliczna.
+\end{compactitem}
+\end{wn}
+\begin{proof}
+Zauważmy, że $\Fix(|\varphi|)=|\mK(\Fix(\mP(\varphi)))|$. Ponieważ kompleks symplicjalny $K$~jest zgniatalny, na podstawie twierdzenia \ref{tw_welkera_o_zgniatalnosci_podzialu} zgniatalny jest również jego podział barycentryczny $\mK(\mP(K))$. Teza wniosku wynika natychmiast ze stwierdzenia \ref{stw-baclawski_dla_wymiarow_2_i_3} zastosowanego do częściowego porządku $P=\mP(K)$ i~odwzorowania $f=\mP(\varphi)$. 
+\end{proof}
+
+Analizując dowody stwierdzenia \ref{stw-baclawski_dla_wymiarow_2_i_3} i~wniosku \ref{wn-baclawski_wym_2_3_dla_kompleksow_symplicjalnych} zauważyć możemy, że prawdziwe są następujące, bardziej ogólne, ale nieco mniej eleganckie obserwacje.
+
+\begin{stw}
+Niech $P$~będzie skończonym częściowym porządkiem, zaś $f\colon P\to P$ zachowującym porządek odwzorowaniem. Załóżmy, że kompleks symplicjalny $\mK(P)$~jest $\mathbb{Z}$-acykliczny oraz $\mK(P)\in\mathscr{K}_3$. Wówczas zbiór $\Fix(f)$~jest $\mathbb{Z}$-acykliczny.
+\end{stw}
+
+\begin{wn}
+Niech $K$~będzie skończonym, $\mathbb{Z}$-acyklicznym kompleksem symplicjalnym należącym do $\mathscr{K}_3$, zaś $\varphi\colon K\to K$ niech będzie odwzorowaniem symplicjalnym. Wówczas przestrzeń $\Fix(|\varphi|)$ jest $\mathbb{Z}$-acykliczna.
+\end{wn}
+
+W~kontekście bieżącego rozdziału naturalne jest następujące pytanie.
+\begin{problem}\label{prob100}
+Czy są prawdziwe odpowiedniki twierdzeń Segeva \ref{tw-segeva_o_zgniatalnych}, \ref{tw-segeva_o_acyklicznych}, stwierdzenia \ref{stw-baclawski_dla_wymiarow_2_i_3} i~wniosku \ref{wn-baclawski_wym_2_3_dla_kompleksow_symplicjalnych} dla kompleksów symplicjalnych bez promieni i~częściowych porządków bez promieni?
+\end{problem}
+
+Przypomnijmy, że dla skończonego częściowego porządku i~odwzorowania $f\colon P\to P$ zachowującego porządek zachodzi równość charakterystyki Eulera zbioru punktów stałych funkcji $f$~i~liczby Lefschetza tego odwzorowania: $\chi(\Fix(f))=\lambda(f)$. Nasuwa się zatem poniższe pytanie.
+\begin{problem}\label{prob101}
+Niech $P$~będzie częściowym porządkiem bez promieni, zaś $f\colon P\to P$ zachowującym porządek odwzorowaniem. Czy $\chi(\Fix(f))=1$, o~ile kompleks $\mK(P)$ jest zgniatalny (ściągalny, acykliczny)?
+\end{problem}
+Gdy kompleks $\mK(P)$~jest zgniatalny, można spróbować uzyskać odpowiedź na powyższe pytanie stosując metody kombinatoryczne w~duchu Baclawskiego. Jeśli przestrzeń $|\mK(P)|$ jest ściągalna, to na podstawie twierdzenia Okhezina \ref{tw-okhezina} zbiór $\Fix(f)\not=\emptyset$. Gdy natomiast zakładamy jedynie, że kompleks symplicjalny $\mK(P)$~jest acykliczny, żadne ze znanych autorowi twierdzeń nie gwarantuje nawet istnienia punktu stałego funkcji $f$ (patrz problem \ref{problem-acykliczny_to_fpp}).
+
+
+\begin{comment}
+%==============================================================
+%==============================================================
+%==============================================================
+
+
+
+\section{Wielościany promień-właściwe i~punkty stałe ich promień-właściwych odwzorowań}
+(do napisania)
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+
+\subsection{Wielościany i~odwzorowania promień-właściwe}
+(do napisania)
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+
+\subsection{Twierdzenie o~punkcie lub końcu stałym dla oswojonych do wewnątrz wielościanów promień-właściwych}
+(do napisania)
+\end{comment}
+
+\begin{comment}
+\[
+\xymatrix@M=0pt{
+		&		& \bullet\ar@{-}[d]\ar@{-}[dr]\\
+		&		& \bullet\ar@{-}[d]\ar@{-}[dr]\ar@{-}[dll]	& \bullet\ar@{-}[d]\ar@{-}[dl]\ar@{-}[dll]\\
+\bullet\ar@{-}[d]\ar@{-}[dr]	& \bullet\ar@{-}[d]\ar@{-}[dl]	& \bullet\ar@{-}[dll]	& \bullet\ar@{-}[dll]\\
+\bullet		& \bullet}
+\]
+
+\[
+\xymatrix@M=0pt{
+		&		& \bullet\ar@{-}[d]\ar@{-}[dr]\ar@{-}[drr]	& \bullet\ar@{-}[d]\ar@{-}[dl]\ar@{-}[drr]	&		&		\\
+		&		& \bullet\ar@{-}[d]\ar@{-}[dr]\ar@{-}[dll]\ar@{-}[drr]	& \bullet\ar@{-}[d]\ar@{-}[dl]\ar@{-}[dll]\ar@{-}[drr]	& \bullet\ar@{-}[d]\ar@{-}[dr]	& \bullet\ar@{-}[d]\ar@{-}[dl]\\
+\bullet\ar@{-}[d]\ar@{-}[dr]	& \bullet\ar@{-}[d]\ar@{-}[dl]	& \bullet\ar@{-}[dll]\ar@{-}[drr]	& \bullet\ar@{-}[dll]\ar@{-}[drr]	& \bullet\ar@{-}[d]\ar@{-}[dr]	& \bullet\ar@{-}[d]\ar@{-}[dl]\\
+\bullet		& \bullet	& 		& 		& \bullet\ar@{-}[d]	& \bullet\ar@{-}[dl]\\
+		&		&		&		& \bullet}
+\]
+
+\[
+\xymatrix@M=0pt{
+		&		&		&		&		&		& \bullet\ar@{-}[d]\ar@{-}[dr]\\
+		&		& \bullet\ar@{-}[d]\ar@{-}[dr]\ar@{-}[drr]	& \bullet\ar@{-}[d]\ar@{-}[dl]\ar@{-}[drr]	&		&		& \bullet\ar@{-}[d]\ar@{-}[dr]\ar@{-}[dll]	& \bullet\ar@{-}[d]\ar@{-}[dl]\ar@{-}[dll]\\
+		&		& \bullet\ar@{-}[d]\ar@{-}[dr]\ar@{-}[dll]\ar@{-}[drr]	& \bullet\ar@{-}[d]\ar@{-}[dl]\ar@{-}[dll]\ar@{-}[drr]	& \bullet\ar@{-}[d]\ar@{-}[dr]	& \bullet\ar@{-}[d]\ar@{-}[dl]	& \bullet\ar@{-}[d]\ar@{-}[dr]\ar@{-}[dll]	& \bullet\ar@{-}[d]\ar@{-}[dl]\ar@{-}[dll]\\
+\bullet\ar@{-}[d]\ar@{-}[dr]	& \bullet\ar@{-}[d]\ar@{-}[dl]	& \bullet\ar@{-}[dll]\ar@{-}[drr]	& \bullet\ar@{-}[dll]\ar@{-}[drr]	& \bullet\ar@{-}[d]\ar@{-}[dr]	& \bullet\ar@{-}[d]\ar@{-}[dl]	& \bullet\ar@{-}[d]\ar@{-}[dr]\ar@{-}[dll]	& \bullet\ar@{-}[d]\ar@{-}[dl]\ar@{-}[dll]\\
+\bullet		& \bullet	& 		& 		& \bullet\ar@{-}[d]\ar@{-}[dr]	& \bullet\ar@{-}[d]\ar@{-}[dl]	& \bullet\ar@{-}[dll]	& \bullet\ar@{-}[dll]\\
+		&		&		&		& \bullet	& \bullet}
+\]
+\end{comment}
+\newpage\thispagestyle{empty}

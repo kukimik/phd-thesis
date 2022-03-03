@@ -1,0 +1,260 @@
+\documentclass[a4paper,12pt,twoside]{book}
+\makeatletter
+ \renewcommand\@seccntformat[1]{\csname the#1\endcsname.\quad}
+ \renewcommand\numberline[1]{#1.\hskip0.7em}
+\makeatother
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[russian,polish]{babel}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\frenchspacing
+\usepackage{indentfirst}
+\usepackage{polski}
+\usepackage{comment}
+\usepackage{paralist}
+\usepackage[noadjust]{cite}
+\usepackage[noautomatic]{imakeidx}
+%\usepackage{imakeidx}
+\usepackage{relsize}
+\makeindex[title=Spis terminów]
+\usepackage[polish,refpage]{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{Spis oznaczeń}
+\renewcommand{\pagedeclaration}[1]{,\ \ #1}
+\usepackage{mathpazo}
+\linespread{1.05}        % Palatino needs more leading
+\normalfont
+\usepackage{mathrsfs}
+
+\newcommand*{\textmyfont}{\fontfamily{kurier}\selectfont} %ccr
+\DeclareTextFontCommand{\myfont}{\textmyfont}
+\newcommand{\cyryl}[1]{\foreignlanguage{russian}{\myfont{#1}}}
+
+
+\usepackage[toctitles]{titlesec}
+\usepackage{color}
+%\usepackage{backref}
+%\renewcommand{\backrefsep}{, }
+%\renewcommand{\backreftwosep}{, }
+%\renewcommand{\backreflastsep}{, }
+%\renewcommand{\backrefalt}[4]{%
+%{\footnotesize \textit{[~#2~]}}
+%}
+\definecolor{gray50}{gray}{0.50}
+\newcommand{\hsp}{\hspace{20pt}}
+
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand*\sfdefault{ugq}
+
+\titleformat{\chapter}[block]{\Huge\itshape}{\textcolor{gray50}{\scshape Rozdział \thechapter}}{-200pt}{\normalfont\sffamily\Huge\bfseries\hrule\vspace{1mm}\hfill\begin{minipage}{\textwidth}\begin{flushright}}[\end{flushright}\end{minipage}]
+
+%\titleformat{\chapter}[hang]{\Huge\itshape}{\textcolor{gray50}{${\langle\big\langle}$}\hsp\itshape Rozdział \thechapter\hsp\textcolor{gray50}{$\big\rangle\rangle$}}{-200pt}{\normalfont\sffamily\Huge\bfseries\hrule\hfill}
+
+%\titleformat*{\section}{\large\bfseries}
+%\titleformat*{\subsection}{\large\itshape}
+%\titleformat*{\subsubsection}{\bfseries\itshape}
+
+
+\titleformat*{\section}{\large\scshape\centering}
+\titleformat*{\subsection}{\large\itshape}
+\titleformat*{\subsubsection}{\bfseries\itshape}
+
+\theoremstyle{plain} \newtheorem{tw}{Twierdzenie}[section]
+\theoremstyle{plain} \newtheorem{stw}[tw]{Stwierdzenie}
+\theoremstyle{plain} \newtheorem{lem}[tw]{Lemat}
+\theoremstyle{plain} \newtheorem{wn}[tw]{Wniosek}
+\theoremstyle{remark} \newtheorem{uw}[tw]{Uwaga}
+\theoremstyle{definition} \newtheorem{problem}[tw]{Problem}
+\theoremstyle{definition} \newtheorem{ex}[tw]{Przykład}
+\theoremstyle{definition} \newtheorem{rys}[tw]{Rysunek}
+\theoremstyle{definition} \newtheorem{hipoteza}[tw]{Hipoteza}
+
+\theoremstyle{plain} \newtheorem*{tw*}{Twierdzenie}
+\theoremstyle{plain} \newtheorem*{stw*}{Stwierdzenie}
+
+\usepackage[bindingoffset=2cm, top=3.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+\fancyhead[RO,LE]{\small\thepage}
+\fancyhead[RE]{\small\leftmark}
+\fancyhead[LO]{\small\rightmark}
+\setlength{\headheight}{14.12115pt}
+
+\renewcommand{\chaptermark}[1]{%
+  \ifnum\value{chapter}>0
+    \markboth{\MakeUppercase{\thechapter{}. #1}}{}%
+  \else
+    \markboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}%
+  \fi}
+
+%\usepackage{fancybox}
+\usepackage[all]{xy}
+\newcommand{\infcomp}{\bigcirc^\rightarrow\cofka\cofka}
+\newcommand{\revcomp}{\bigcirc^\leftarrow\cofka\cofka}
+\newcommand{\s}{\mathfrak{s}\!}
+\newcommand{\ord}{\operatorname{ord}}
+\renewcommand{\ker}{\operatorname{ker}}
+\newcommand{\lc}{\operatorname{LC}}
+\newcommand{\lct}{\lc^\triangle}
+%\usepackage{stmaryrd}
+\newcommand{\moc}[1]{\left|#1\right|}%{\overline{\overline{#1}}}%{\mathfrak{Card}\left(#1\right)}
+
+\newcommand{\Comp}{\mathcal{G}} % comparability graph
+
+\newcommand{\AB}{\operatorname{AB}}
+\newcommand{\mcC}{\mathcal{C}}
+\newcommand{\mcR}{\mathcal{R}}
+\newcommand{\mcK}{\mathcal{K}}
+\newcommand{\mK}{\mathcal{K}}
+\newcommand{\mH}{\mathcal{H}}
+\newcommand{\mP}{\mathcal{P}}
+\newcommand{\mO}{\mathcal{O}}
+\newcommand{\mX}{\mathcal{X}}
+\newcommand{\mcV}{\mathcal{V}}
+\newcommand{\mcP}{\mathcal{P}}
+\newcommand{\mcH}{\mathcal{H}}
+\newcommand{\mcT}{\mathcal{T}}
+\newcommand{\mcM}{\mathcal{M}}
+\newcommand{\mbC}{{\mathcal{C}ell}}
+
+
+\newcommand{\Cont}{\operatorname{C}}
+
+\newcommand{\simplehe}{\mbox{$\diagup \hspace{-5pt} \searrow$}}
+\newcommand{\stronghe}{\simplehe\hspace{-0.53cm}\simplehe}
+
+\newcommand{\infcoll}{\mbox{$\hspace{2pt}\searrow\hspace{-10pt}^\infty\hspace{2pt}$}}
+\newcommand{\elcoll}{\mbox{$\hspace{2pt}\searrow\hspace{-9pt}^\mathrm{e}\hspace{2pt}$}}
+
+
+\newcommand{\mCtriang}{\mathcal{C}_\triangle}
+\newcommand{\mItriang}{\mathcal{I}_\triangle}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\str}{\operatorname{str}}
+\newcommand{\rel}{\operatorname{rel}}
+\newcommand{\Ht}{\rk}
+\newcommand{\ltop}{\mathbf{1}}
+\newcommand{\lbottom}{\mathbf{0}}
+
+\newcommand{\lk}{\operatorname{lk}}
+\newcommand{\st}{\operatorname{st}}
+
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\FixEnd}{\operatorname{FixEnd}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Ind}{\operatorname{Ind}}
+\newcommand{\Int}{\operatorname{Int}}
+\newcommand{\mN}{\mathbb{N}}
+\newcommand{\mZ}{\mathbb{Z}}
+\newcommand{\mR}{\mathbb{R}}
+
+\newcommand{\I}{\mathbb{I}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\D}{\mathbb{D}}
+
+\newcommand{\CAT}{\mathrm{CAT}}
+\newcommand{\F}{\mathscr{F}\!}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\lf}{\mathrm{lf}}
+\newcommand{\FPEP}{\mathrm{FPEP}}
+\newcommand{\FPP}{\mathrm{FPP}}
+\newcommand{\FSEP}{\mathrm{FSEP}}
+\newcommand{\FSP}{\mathrm{FSP}}
+\newcommand{\codism}{\nearrow\!\!\nearrow}
+\newcommand{\dism}{\searrow\!\!\searrow}
+\newcommand{\PoSet}{\mathbb{P}\mathrm{o}\mathbb{S}\mathrm{et}}
+\newcommand{\SimpComp}{\mathbb{S}\mathrm{imp}\mathbb{C}\mathrm{omp}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\mfr}{\mathfrak{r}}
+\newcommand{\mfR}{\mathfrak{R}}
+\newcommand{\Aut}{\operatorname{Aut}}
+
+\newcommand{\tc}{\mathcal{TC}}
+\newcommand{\boleq}{\sqsubseteq}
+\newcommand{\bogeq}{\sqsupseteq}
+\newcommand{\bol}{\sqsubset}
+\newcommand{\bog}{\sqsupset}
+
+\newcommand{\pion}{|}
+\newcommand{\cofka}{\!}
+
+
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\preceq}{\preccurlyeq}
+\renewcommand{\succeq}{\succcurlyeq}
+\usepackage[unicode,naturalnames,hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage[all]{hypcap}
+
+\sloppy
+\clubpenalty=10000
+\widowpenalty=10000
+\brokenpenalty=10000
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\include{./tex/title}\thispagestyle{empty}
+\frontmatter
+%\topskip0pt
+\vspace*{\fill}
+\thispagestyle{empty}
+\hypersetup{pageanchor=true}
+\begin{center}\Large\textit{Rodzicom}\vspace{2.5cm}\end{center}
+\vspace*{\fill}
+\newpage\thispagestyle{empty}
+\addtocontents{toc}{\pdfbookmark[section]{\contentsname}{toc}}
+\tableofcontents
+\addtocontents{toc}{\vspace{2.2cm}}
+\newpage\thispagestyle{empty}
+\include{./tex/thanks}
+\include{./tex/intro}
+\mainmatter
+
+\include{./tex/chapter1}
+
+\addtocontents{toc}{\newpage\vspace{0.4cm}\hspace{-0.765cm} {\bfseries\scshape Część I: Typy homotopijne\par}}
+\part*{\sffamily Część I: Typy homotopijne}
+\include{./tex/chapter2}
+\include{./tex/chapter3}
+\addtocontents{toc}{\vspace{0.4cm}\hspace{-0.765cm} {\bfseries\scshape Część II: Punkty stałe\par}}
+\part*{\sffamily Część II: Punkty stałe}
+\include{./tex/chapter4}
+\include{./tex/chapter5}
+
+\appendix
+\titleformat{\chapter}[hang]{\Huge\itshape}{\textcolor{gray50}{${\langle\big\langle}$}\hsp\itshape Dodatek \thechapter\hsp\textcolor{gray50}{$\big\rangle\rangle$}}{-100pt}{\normalfont\sffamily\Huge\bfseries\hrule\hfill}
+\titleformat{\chapter}[hang]{\Huge\itshape}{\textcolor{gray50}{\scshape Dodatek \thechapter}}{-200pt}{\normalfont\sffamily\Huge\bfseries\hrule\hfill}
+%\include{./tex/dowod} % dowod, ze rozne izomorfizmy miedzy homologiami z ksiazki Hughes-Ranicki sa naturalne
+\include{./tex/problemy}
+
+\backmatter
+\small
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliografia}
+%\bibliographystyle{plplain}
+%\bibliographystyle{stylbiblio}
+\bibliographystyle{mojstyl}
+\bibliography{bibliografia}\newpage\thispagestyle{empty}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Spis oznaczeń}
+\markboth{\MakeUppercase{Spis oznaczeń}}{\MakeUppercase{Spis oznaczeń}}
+\setlength{\nomitemsep}{0.08cm}
+\printnomenclature[2.51cm]
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Spis terminów}
+\printindex
+\end{document}

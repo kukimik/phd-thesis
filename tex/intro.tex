@@ -1,0 +1,237 @@
+\chapter{Wstęp}
+Początki topologii algebraicznej są nierozerwalnie związane z~pojęciem kompleksu symplicjalnego. Oddaje to używana niegdyś w~odniesieniu do tej dziedziny nazwa ,,topologia kombinatoryczna'': badanie topologicznych własności przestrzeni, które można przedstawić jako geometryczną realizację kompleksu symplicjalnego, sprowadza się bowiem w~dużej mierze do rozważań o~charakterze geometryczno-kombinatorycznym, dotyczących zależności pomiędzy sympleksami tego kompleksu. Z~upływem czasu większego znaczenia zaczęły nabierać metody algebraiczne (por.~\cite{Dieudonne09}, \cite{James06}).
+
+W~ostatnich latach kombinatoryczne aspekty topologii algebraicznej ponownie przyciągają uwagę. Częściowo wynika to zapewne z~faktu, że coraz większą rolę w~badaniach z~zakresu topologii, a~zwłaszcza w~jej dziedzinach takich jak stosowana topologia algebraiczna, topologia obliczeniowa oraz cyfrowa (zob.~\cite{Kovalevsky08,Sergeraert,Edelsbrunner10,Zomorodian05,Kaczynski04}), odgrywają komputery. Z~natury przetwarzają one dane o~charakterze dyskretnym. Z~drugiej strony wydaje się, że matematyka dyskretna staje się coraz bardziej szanowaną dziedziną. Topologia algebraiczna znajduje w~niej piękne zastosowania (np.~\cite{Matousek03,Kozlov08,Bjorner95,Jonsson08}); tu również jej kombinatoryczne oblicze daje o~sobie znać w~bardzo naturalny sposób.
+
+Badanie przestrzeni topologicznych za pomocą ich triangulacji napotyka jednak wiele problemów. Jeden z~nich wynika ze stosunkowo dużej liczby sympleksów, z~których zbudowane są triangulacje nawet prostych przestrzeni. Problem ten stanowił jedną z~motywacji dla wprowadzania innych sposobów opisu topologii, w~tym na przykład pojęcia CW kompleksu. Z~drugiej strony najłatwiejszą do uzyskania strukturą opisującą daną przestrzeń okazuje się być często kompleks symplicjalny (lub inny kompleks wielościenny, np.~kostkowy). Wynika stąd konieczność opracowania technik, które pozwalają ten opis uprościć, przy zachowaniu przynajmniej typu homotopijnego rozważanej przestrzeni.
+
+Jedną ze służących temu metod jest dyskretna teoria Morse'a, wprowadzona w~latach 90-tych ubiegłego wieku przez Formana \cite{Forman98} i~wzorowana na klasycznej, mającej głębokie konsekwencje, gładkiej teorii Morse'a. Główny wynik teorii Formana \cite[Corollary 3.5]{Forman98} pozwala znaleźć CW kompleks homotopijnie równoważny danemu CW kompleksowi, zbudowany z~tzw.~komórek krytycznych dyskretnej funkcji Morse'a zadanej na zbiorze komórek wyjściowego CW kompleksu.
+
+Forman korzysta z~pojęcia elementarnego zgniecenia, zaczerpniętego z~teorii prostej homotopii \cite{Cohen73}. Elementarne zgniecenie regularnego CW kompleksu (tzn.~takiego, że funkcje charakterystyczne wszystkich jego komórek są homeomorfizmami) polega na usunięciu z~niego dwóch komórek: maksymalnej (w~sensie relacji bycia ścianą) oraz jej ściany kowymiaru $1$, nie będącej ścianą żadnej innej komórki. Otrzymany w~ten sposób podkompleks jest retraktem deformacyjnym wyjściowego.
+
+Obok elementarnych zgnieceń znane są różne kombinatoryczne techniki pozwalające na sprowadzenie kompleksu symplicjalnego bądź CW kompleksu do kompleksu homotopijnie mu równoważnego \cite{Kozlov08,Jonsson08}. Należy do nich pojęcie rozbierania (ang.~\textit{dismantling}) kompleksów symplicjalnych. Nazwa ta, w~odniesieniu do kompleksów symplicjalnych, nie jest standardowa; np.~Barmak i~Minian \cite{Barmak12} piszą o~mocnych zgnieceniach (ang.~\textit{strong collapses}). Autor sądzi jednak, że mające długą tradycję słowo ,,rozbieralność'', opisujące własności grafów oraz~zbiorów częściowo uporządkowanych ściśle związane z~rozbieralnością kompleksów symplicjalnych, jest bardziej odpowiednie.
+
+Bliski związek zbiorów częściowo uporządkowanych (lub częściowych porządków; terminów tych używamy zamiennie) z~kompleksami symplicjalnymi odgrywa znaczną rolę również w~innych fragmentach topologii kombinatorycznej. Dla każdego częściowego porządku $P$~istnieje kompleks symplicjalny $\mK(P)$, którego sympleksami są skończone, niepuste łańcuchy w~$P$. Z~drugiej strony dla kompleksu symplicjalnego $K$~przez $\mP(K)$ oznaczamy zbiór jego sympleksów uporządkowany przez inkluzję. Przyporządkowania te są funktorialne.
+
+Na zbiorze częściowo uporządkowanym można zadać spełniającą aksjomat oddzielania $\mathrm{T_0}$ topologię, przyjmując, że jego podzbiór jest otwarty, o~ile wraz z~każdym jego elementem należą do niego wszystkie elementy od niego mniejsze \cite{Alexandroff37}. Otrzymana w~ten sposób przestrzeń topologiczna ma tę własność, że przekrój dowolnej rodziny jej otwartych podzbiorów jest zbiorem otwartym. Przestrzenie spełniające ten warunek (na przykład wszystkie skończone przestrzenie topologiczne) nazywamy przestrzeniami Aleksandrowa. Opisane przyporządkowanie wyznacza izomorfizm między kategorią zbiorów częściowo uporządkowanych a~kategorią $\mathrm{T_0}$~przestrzeni Aleksandrowa.
+
+Jak udowodnił McCord \cite{McCord66}, realizacja geometryczna dowolnego kompleksu symplicjalnego $K$~jest słabo homotopijnie równoważna zbiorowi częściowo uporządkowanemu $\mP(K)$ (traktowanemu jako przestrzeń Aleksandrowa). Odwrotnie, dla każdego częściowego porządku $P$~realizacja geometryczna kompleksu $\mK(P)$ jest słabo homotopijnie równoważna temu porządkowi.
+
+Mniej więcej w~tym samym czasie, co wyniki McCorda \cite{McCord66}, ukazała się publikacja Stonga \cite{Stong66}, w~której podał on ,,klasyfikację'' typów homotopijnych skończonych przestrzeni topologicznych (znacząco różnych od ich słabych typów homotopijnych),  wykorzystując w~tym celu wspomniane wyżej pojęcie rozbieralności. Wątek ten podjęto w~ostatnich latach w~licznych pracach (np.~\cite{May,May08,May08a,May08b,Arenas99,Barmak07,Barmak08,Barmak08a,Barmak11,Barmak12}).
+
+Wiele twierdzeń topologii algebraicznej znalazło zastosowania w~teorii punktów stałych ciągłych odwzorowań. Nie inaczej jest w~przypadku wymienionych wyżej metod topologii kombinatorycznej, z~tą różnicą, że naturalne jest badanie przy ich użyciu punktów stałych odwzorowań obiektów dyskretnych, jak zbiory częściowo uporządkowane, grafy czy kompleksy symplicjalne. 
+
+Przykładowo, zbiór częściowo uporządkowany ma własność punkt stałego wtedy i~tylko wtedy, gdy ma ją podzbiór, do którego jest on rozbieralny \cite{Rival76}. Zbiór punktów stałych zachowującego porządek odwzorowania skończonego, rozbieralnego do punktu zbioru częściowo uporządkowanego w~siebie jest rozbieralny do punktu \cite{Duffus80a}. Jeżeli grupa działa na skończonym, rozbieralnym do punktu zbiorze częściowo uporządkowanym, to zbiór punktów stałych tego działania jest rozbieralny do punktu; można stąd wywnioskować, że jeśli grupa działa (przez automorfizmy symplicjalne) na skończonym, rozbieralnym do punktu kompleksie symplicjalnym, to zbiór punktów stałych działania indukowanego na jego realizacji geometrycznej jest ściągalny \cite{Barmak12,Hensel14}.
+
+Na związek dyskretnej teorii Morse'a z~teorią punktów stałych wskazuje opublikowany w~2012 przez Baclawskiego \cite{Baclawski12} kombinatoryczny dowód faktu, że każde odwzorowanie symplicjalne skończonego, zgniatalnego kompleksu symplicjalnego w~siebie ma sympleks stały. Oczywiście wynik ten można otrzymać jako wniosek z~twierdzenia Lefschetza o~punkcie stałym; interesująca jest jednak metoda dowodu zastosowana przez Baclawskiego. Stanowi on fragment kombinatorycznego dowodu twierdzenia o~własności punktu stałego skończonych, ściętych krat bez dopełnień, poszukiwanego od czasu udowodnienia tego faktu przy pomocy dość zaawansowanych metod algebraicznych \cite{Baclawski77,Baclawski79} w~latach \mbox{70-ych}.
+
+Choć topologia algebraiczna oraz kombinatoryczna dają możliwość badania przestrzeni niezwartych, większość wyżej wymienionych wyników dotyczy obiektów zwartych (bądź, w~kombinatorycznym ujęciu, skończonych). 
+
+Cel niniejszej rozprawy jest trojaki. Po pierwsze, jest nim przybliżenie Czytelnikowi aktualnego stanu wiedzy na temat wspomnianych wyżej metod oraz wyników. Po drugie, uogólnienie tych wyników na obiekty niezwarte (nieskończone). Po trzecie, zasugerowanie możliwych kierunków dalszych badań, zwłaszcza dotyczących ,,punktów stałych w~nieskończoności'' oraz własności wielościanów bez promieni i~częściowych porządków bez promieni.
+
+Z~punktu widzenia matematyki dyskretnej i~topologii stosowanej, uogólnienia metod topologii kombinatorycznej na niezwarte przestrzenie mogą wydawać się mało ważne, gdyż obiekty, którymi dziedziny te się zajmują, są z~reguły zwarte (skończone). Z~drugiej strony, niezwarta topologia algebraiczna znajduje zastosowania np.~przy badaniu zwartych rozmaitości czy w~geometrycznej teorii grup \cite{Guilbault13,Geoghegan08,Hughes96}. Autor pozwala sobie wyrazić nadzieję, że wyniki rozprawy oraz badania w~wyznaczonych przez nią kierunkach mogą się okazać przydatne w~tych (lub innych) dziedzinach.
+
+Zanim przystąpimy do omówienia wyników rozprawy, poświęćmy chwilę obiektom, których one dotyczą. Zauważmy, że spójny wielościan może nie być zwarty z~dwóch ,,powodów'': albo zawiera domknięty podzbiór homeomorficzny z~półprostą $[0,\infty)$, zwany \textit{promieniem} (zwartość jest zaburzona ,,globalnie''), albo istnieje jego element, który nie ma zwartego otoczenia (czyli wielościan ten nie jest lokalnie zwarty). Z~kombinatorycznego punktu widzenia pierwszy z~tych warunków jest równoważny istnieniu nieskończonej ścieżki prostej w~\mbox{$1$-wymiarowym} szkielecie triangulacji tego wielościanu, zaś drugi istnieniu wierzchołka tego szkieletu należącego do nieskończenie wielu krawędzi. Naturalne jest rozważanie klas tych wielościanów, dla których zachodzi co najwyżej jeden z~wymienionych ,,powodów'': są to wielościany lokalnie zwarte oraz wielościany bez promieni. (Część wspólną tych dwóch klas tworzą przestrzenie będące sumami rozłącznymi zwartych wielościanów.)
+
+Lokalnie zwarte wielościany stanowią klasę dość dobrze znaną i~często pojawiającą się w~literaturze. Mniej uwagi poświęcano dotąd wielościanom bez promieni; zazwyczaj występują one w~roli kontrprzykładów (choć istnieje spora liczba publikacji dotyczących grafów bez promieni). Niniejszą rozprawą zapełniamy w~pewnym stopniu tę lukę. Oba warunki: lokalna zwartość (lokalna skończoność) oraz brak promieni (w~sensie ciągłym oraz dyskretnym), przewijają się przez całą rozprawę. 
+ 
+
+%---------------------------------------------------------------------
+% OMÓWIENIE WYNIKÓW
+
+\section*{Omówienie struktury i~wyników rozprawy}
+Rozprawa składa się z~pięciu rozdziałów. Pierwszy z~nich zawiera wiadomości wstępne. Kolejne cztery podzielone są na dwie części: rozdziały \ref{chapter2} oraz \ref{chapter3} poświęcone są typowi homotopijnemu niezwartych kompleksów symplicjalnych i~CW kompleksów, oraz nieskończonych przestrzeni Aleksandrowa; natomiast rozdziały \ref{chap4} oraz~\ref{chap5} dotyczą punktów stałych niezwartych odwzorowań przestrzeni tego typu. W~końcowej części rozprawy zebrane zostały problemy otwarte; znajdują się tam również bibliografia (wspólna dla całości rozprawy) oraz spisy terminów i~oznaczeń.
+
+Rozdział \ref{chapter2} opiera się w~pewnym stopniu na pracy magisterskiej \cite{Kukiela10a} oraz publikacji \cite{Kukiela10} autora. Rozdział \ref{chapter3} jest znacząco udoskonaloną i~rozszerzoną wersją artykułu autora \cite{Kukiela13}. Część wyników rozdziału \ref{chap4} naszkicowana została w~pracy semestralnej \cite{Kukiela12}. Niektóre spośród rezultatów uzyskanych w~rozdziałach \ref{chapter2},~\ref{chap4}~oraz \ref{chap5} stanowią przedmiot planowanych publikacji.
+
+%--------------------------------------------------------------------
+\subsection*{Rozdział \ref{chapter1}: Wiadomości wstępne}
+Rozdział \ref{chapter1} zawiera pojęcia wstępne z~zakresu matematyki dyskretnej, topologii ogólnej, algebraicznej oraz tzw.~topologii w~nieskończoności, a~także teorii punktów stałych. Wiele uwagi poświęcamy zbiorom częściowo uporządkowanym, kompleksom symplicjalnym oraz wiążącym je funktorom $\mP$, $\mK$; lematom o~typie homotopijnym przestrzeni powstałych przez sklejenia (zwłaszcza doklejanie komórek); funktorowi zbioru końców $\E$; uzwarceniu Freudenthala; homologiom lokalnie skończonym oraz homologiom w~nieskończoności; pojęciom przestrzeni oswojonej do wewnątrz (oswojonej na zewnątrz) oraz przestrzeni z~kołnierzykiem do wewnątrz (z~kołnierzykiem na zewnątrz); uogólnionej liczbie Lefschetza $\Lambda$ (określonej przy użyciu śladu Leraya dla tzw.~dopuszczalnych, ciągłych odwzorowań przestrzeni, których homologie nie muszą być skończonego typu); indeksowi punktów stałych $\Ind$.
+
+
+%--------------------------------------------------------------------
+\subsection*{Rozdział \ref{chapter2}: Mocny typ homotopijny}
+W~rozdziale \ref{chapter2} rozszerzamy podaną przez Stonga \cite{Stong66} ,,klasyfikację'' typów homotopijnych skończonych przestrzeni topologicznych na klasę przestrzeni Aleksandrowa bez promieni. Korzystamy przy tym z~pojęcia rozbieralności (w~ujęciu Schr{\"o}dera \cite{Schroder99}). Wiele spośród wyników rozdziału jest wykorzystywanych w~dalszej części rozprawy.
+
+Jak wspominaliśmy, dowolnemu częściowemu porządkowi $(P,\leq)$ możemy przyporządkować pewną przestrzeń topologiczną Aleksandrowa $(P,\tau)$; otwartą bazę topologii tej przestrzeni stanowi rodzina \[\bigl\{ \{q\in P:q\leq p\}:p\in P\bigr\}.\] Przyporządkowanie to jest funktorialne (funkcje zachowujące porządek są ciągłe względem wyznaczonych przez porządek topologii Aleksandrowa) i~jest izomorfizmem między kategorią częściowych porządków a~kategorią $\mathrm{T_0}$~przestrzeni Aleksandrowa. Wobec tego $\mathrm{T_0}$~przestrzenie Aleksandrowa oraz częściowe porządki utożsamiamy ze sobą.
+
+Element $p\in P$ częściowego porządku $P$~nazywamy \textit{nieredukowalnym}, jeżeli zbiór $\{q\in P:q>p\}$ ma element najmniejszy bądź zbiór $\{q\in P:q<p\}$ ma element największy; istnieje wówczas mocna retrakcja deformacyjna \mbox{$P\to P\smallsetminus\{p\}$}. Jeśli zbiór $P$~jest skończony oraz można znaleźć skończony ciąg \[P=P_0\supseteq P_1\supseteq\ldots \supseteq P_n\] o~tej własności, że dla każdego $0<i\leq n$ istnieje punkt nieredukowalny $p_i\in P_i$ taki, że $P_i=P_{i-1}\smallsetminus\{p_i\}$, to mówimy, że $P$~jest \textit{rozbieralny} do $P_n$. Częściowy porządek nie zawierający punktów nieredukowalnych nazywamy \textit{rdzeniem}. Oczywiście każdy skończony częściowy porządek jest rozbieralny do swojego podzbioru będącego rdzeniem. Stong \cite[Theorem 4]{Stong66} wykazał, że skończone przestrzenie topologiczne $P,Q$ są homotopijnie równoważne wtedy i~tylko wtedy, gdy ich rdzenie są homeomorficzne.
+
+Pojęcie rozbieralności oraz jego odpowiedniki w~innych kategoriach (np.~grafów czy kompleksów symplicjalnych) mają liczne zastosowania w~wielu gałęziach matematyki (np.~logice \cite{Larose07}, algebrze uniwersalnej \cite{Larose05,Larose97}, teorii gier \cite{Nowakowski83}, zagadnieniach kolorowania grafów \cite{Civan07}, teorii węzłów \cite{Przytycki12}, geometrycznej teorii grup \cite{Chepoi14,Hensel14}, teorii procesów stochastycznych i~fizyce statystycznej \cite{Brightwell00,Dyer04}). Znane są również jego odpowiedniki dla nieskończonych częściowych porządków; korzystamy z~jednego z~tych uogólnień \cite{Schroder99}. Symbolem $P\dism Q$ oznaczamy fakt, że częściowy porządek $P$~jest \textit{$\mathcal{C}$-rozbieralny} do swojego podzbioru $Q$,~tzn.~istnieje pozaskończony ciąg $\left(r_{\phi,\phi+1}\colon P_\phi\to P_{\phi+1}\right)_{\phi<\alpha}$ mocnych retrakcji deformacyjnych o~pewnych dodatkowych własnościach i~taki, że \mbox{$P_0=P$}~oraz $P_\alpha=Q$. 
+
+Mówimy, że przestrzeń Aleksandrowa jest \textit{bez promieni}, jeżeli stowarzyszony z~nią częściowy porządek jest bez promieni, tzn.~nie istnieje różnowartościowy ciąg jego elementów, którego każde dwa kolejne wyrazy są porównywalne. Poniższe twierdzenie stanowi główny wynik rozdziału, uogólniający twierdzenie Stonga \cite[Theorem 4]{Stong66}; częściowy wynik tego typu stanowił temat publikacji autora \cite{Kukiela10a} oraz jego pracy magisterskiej \cite{Kukiela10}. (Twierdzenia dowodzimy w~mocniejszej niż następująca, ekwiwariantnej wersji; dla prostoty w~poniższym sformułowaniu pominęlismy działanie grupy.)
+
+\begin{tw*}[\ref{wniosek_klasyfikacyjny}]
+Jeśli $X$, $Y$ są przestrzeniami Aleksandrowa bez promieni, to istnieją rdzenie $X^C$, $Y^C$ będące ich mocnymi retraktami deformacyjnymi i~takie, że $X\dism X^C$ oraz $Y\dism Y^C$. Przestrzeń $X$~jest homotopijnie równoważna przestrzeni $Y$~wtedy i~tylko wtedy, gdy rdzenie $X^C$, $Y^C$ są homeomorficzne. 
+\end{tw*}
+
+Interesującym wnioskiem z~rozważań rozdziału jest następujący wynik, dotyczący nieistnienia nietrywialnych H-przestrzeni oraz ko-H-przestrzeni Aleksandrowa bez promieni. Uogólnia on twierdzenia Helmstutlera i~Vaughna \cite[Theorem 8]{Helmstutler10} oraz Stonga \cite[Section 5]{Stong66}.
+
+\begin{stw*}[\ref{stw-stonga_o_h_przestrzeniach}, \ref{stw-helmsutlera-vaughna}]
+Niech $(X,p)$~będzie przestrzenią Aleksandrowa bez promieni, z~punktem wyróżnionym $p\in X$. Jeżeli istnieje ciągłe odwzorowanie \mbox{$\mu:X\times X\to X$} takie, że $(X,p,\mu)$ jest \mbox{H-przestrzenią}, bądź ciągłe odwzorowanie \mbox{$\eta\colon X\to X\vee X$} takie, że $(X,p,\eta)$ jest ko-H-przestrzenią, to przestrzeń $X$~jest ściągalna do punktu $p$.
+\end{stw*}
+
+Wprowadzamy w~pewnym sensie dualne do rozbieralności pojęcie korozbieralności. O~ile \mbox{$\mathcal{C}$-rozbieralność} przestrzeni $P$~do jej podprzestrzeni $Q$~intuicyjnie oznacza usuwanie kolejno pewnych elementów z~$P$, aż otrzyma się $Q$, o~tyle \mbox{$\mathcal{C}$-korozbieralność} $P$~z~$Q$, oznaczana przez $Q\codism P$, polega na dodawaniu do $Q$~elementów, aż do uzyskania zbioru $P$. Godny uwagi wydaje się następujący wynik.
+
+\begin{tw*}[\ref{build_if_dism}]
+Jeżeli $X$~jest przestrzenią Aleksandrowa bez promieni oraz \mbox{$A\subseteq X$}, to $X\dism A$ wtedy i~tylko wtedy, gdy $A\codism X$.
+\end{tw*}
+
+Pojęcia $\mathcal{C}$-rozbieralności oraz $\mathcal{C}$-korozbieralności przenosimy na kompleksy symplicjalne. Definiujemy przy ich użyciu, wzorując się na definicji prostego typu homotopijnego, mocny typ homotopijny kompleksu symplicjalnego oraz przedstawiamy bliskie związki symplicjalnej i~teorioporządkowej wersji (ko)rozbieralności. W~szczególności otrzymujemy symplicjalny odpowiednik cytowanego wyżej twierdzenia \ref{wniosek_klasyfikacyjny}, tj.~,,klasyfikację'' mocnych typów homotopijnych kompleksów symplicjalnych bez promieni. Inspiracją dla tego fragmentu rozdziału były podobne wyniki podane w~przypadku skończonym przez Barmaka i~Miniana \cite{Barmak12}.
+
+%--------------------------------------------------------------------
+\subsection*{Rozdział \ref{chapter3}: Dyskretna teoria Morse'a}
+Rozdział \ref{chapter3} poświęcony jest dyskretnej teorii Morse'a na obiektach niezwartych. Rozważania prowadzimy korzystając z~pojęcia skojarzenia Morse'a, wprowadzonego przez Chariego \cite{Chari00}, które stanowi dyskretyzację pojęcia gradientowego pola wektorowego. Przypomnijmy zatem jego definicję.
+
+\textit{Skojarzeniem} w~grafie skierowanym nazywamy każdą taką rodzinę jego krawędzi, że żaden wierzchołek tego grafu nie jest elementem dwóch różnych krawędzi należących do tej rodziny. Skojarzenie $M$~w~grafie skierowanym $D$~nazywamy \textit{acyklicznym}, jeżeli graf skierowany utworzony z~$D$~przez zmianę orientacji krawędzi należących do $M$~nie zawiera cykli. 
+Niech $X$~będzie regularnym CW kompleksem. Przez $\mH(X)$~oznaczmy graf skierowany, którego wierzchołkami są komórki CW kompleksu $X$, zaś krawędziami takie pary $(\tau,\sigma)$ komórek, że $\sigma$~jest ścianą $\tau$~kowymiaru $1$. Acykliczne skojarzenie $M$~w~grafie $\mH(X)$ nazywamy \textit{skojarzeniem Morse'a} na CW kompleksie $X$. Mówimy, że komórka CW kompleksu $X$~jest \textit{krytyczna} względem skojarzenia Morse'a $M$, jeśli nie należy do żadnej krawędzi tego skojarzenia. Dla każdej liczby $i\in\mN$~przez $\mcC^M_i(X)$ oznaczamy zbiór \mbox{$i$-wymiarowych} komórek krytycznych CW kompleksu $X$~względem skojarzenia $M$, zaś przez  $c_i^M(X)$ moc tego zbioru. 
+
+Jeśli $X$~jest zwartym, regularnym CW kompleksem, zaś $M$~jest skojarzeniem Morse'a na $X$, to istnieje CW kompleks $X_M$, którego $i$-wymiarowe komórki są, dla każdej liczby $i\in\mN$, we wzajemnie jednoznacznej odpowiedniości z~elementami zbioru $\mcC^M_i(X)$. Wynik ten, uzyskany przez Formana \cite[Corollary 3.5]{Forman98}, nazywamy głównym twierdzeniem dyskretnej teorii Morse'a. Oznaczmy $i$-tą liczbę Bettiego CW kompleksu $X$~przez $\beta_i(X)$. Z~głównego twierdzenia dyskretnej teorii Morse'a wynikają poniższe dyskretne nierówności Morse'a \cite[Corollaries 3.6, 3.7]{Forman98}, prawdziwe dla każdej liczby naturalnej $n$: \begin{align}\sum_{i=0}^{n}(-1)^{n-i}c^M_i(X)&\geq \sum_{i=0}^{n}(-1)^{n-i}\beta_i(X),\label{WST1}\\[10pt]
+c^M_n(X)&\geq \beta_n(X).\label{WST2}\end{align}
+Ponadto charakterystyka Eulera CW kompleksu $X$~wyraża się wzorem: \begin{equation}\chi(X)=\sum_{i=0}^{\dim(X)}(-1)^i c^M_i(X).\label{WST3}\end{equation}
+
+Wyniki te są dyskretnymi odpowiednikami twierdzeń klasycznej, gładkiej teorii Morse'a (por.~\cite{Milnor63}). Podobnie jak gładki pierwowzór, dyskretna teoria Morse'a znalazła liczne zastosowania, np.~w~kombinatoryce \cite{Jonsson08}, topologii obliczeniowej \cite{Harker13,Sergeraert}, algebrze przemiennej \cite{Jollenbeck05}, analizie obrazów \cite{Robins11}, fizyce \cite{Engstrom09}, teorii grup \cite{Farley05}. Pod pewnymi względami jej możliwości są porównywalne, a~nawet większe niż teorii gładkiej \cite{Benedetti13,Gallais10}.
+
+Główne twierdzenie rozdziału \ref{chapter3} uogólnia powyższe wyniki Formana na niezwarte CW kompleksy. Zanim je sformułujemy, przypomnijmy kilka definicji.
+
+Jeżeli $X$~jest regularnym CW kompleksem, zaś $M$~skojarzeniem Morse'a na $X$, to przez $\mH_M(X)$ oznaczamy graf powstały z~$\mH(X)$~przez zmianę orientacji krawędzi należących do $M$. Ciąg $(\sigma_i)_{i\in\mN}$ komórek kompleksu $X$~nazywamy \textit{promieniem malejącym} \cite{Ayala11} w~$\mH_M(X)$, jeżeli dla każdej liczby $i\in\mN$~para $(\sigma_i,\sigma_{i+1})$ jest krawędzią grafu $\mH_M(X)$. Mówimy, że dwa promienie malejące $(\sigma_i)_{i\in\mN}$, $(\tau_i)_{i\in\mN}$ są \textit{równoważne} \cite{Ayala11}, o~ile istnieją $m, n\in\mN$ takie, że $\sigma_{m+i}=\tau_{n+i}$ dla każdej liczby naturalnej $i$. Można wykazać, że jeśli $(\sigma_i)_{i\in\mN}$ jest promieniem malejącym, to istnieje liczba $d\in\mN$, zwana wymiarem promienia $(\sigma_i)_{i\in\mN}$, o~tej własności, że  $\dim(\sigma_i)\in\{d,d+1\}$ dla wszystkich odpowiednio dużych $i\in\mN$. Oczywiście równoważne promienie mają ten sam wymiar. Dla każdej liczby $i\in\mN$~niech $\mcR_i^M(X)$ oznacza zbiór klas równoważności promieni malejących wymiaru $i$, zaś $r^M_i(X)$ moc tego zbioru.
+
+\begin{tw*}[\ref{maincor2}]
+Niech $X$~będzie regularnym CW kompleksem z~zadanym skojarzeniem Morse'a $M$~takim, że rodzina klas równoważności promieni malejących w~$\mH_M(X)$ jest skończona. Wówczas CW kompleks $X$~jest homotopijnie równoważny CW kompleksowi $X_M$~o~tej własności, że dla każdej liczby naturalnej $n$~zbiór $n$-wymiarowych komórek CW~kompleksu $X_M$~jest równoliczny ze zbiorem $\mcC_n^M(X)\cup \mcR_n^M(X)$.
+\end{tw*}
+
+Przy założeniu o~braku promieni malejących w~$\mH_M(X)$~analogiczny wynik uzyskany został (o~czym autor rozprawy dowiedział się stosunkowo późno) przez Orlika i~Welkera \cite[Theorem 4.2.14]{Orlik07}, którzy ponadto (kosztem dodatkowych założeń o~skojarzeniu Morse'a) nie wymagają regularności CW kompleksu $X$. Podobne twierdzenie, dotyczące zbiorów symplicjalnych, zawiera również praca Browna \cite[Proposition 1]{Brown92}, który stosuje je do upraszczania struktury przestrzeni klasyfikujących grup i~monoidów. Założenia sformułowanego wyżej twierdzenia dopuszczają istnienie promieni malejących; jest ono w~tym sensie ogólniejsze niż wyniki Browna oraz Orlika i~Welkera. Ponadto wersja twierdzenia dowiedziona w~rozdziale \ref{chapter3} dotyczy nie tylko CW kompleksów (jak w~powyższym sformułowaniu), ale także wprowadzonych przez Miniana \cite{Minian12} \mbox{h-regularnych} częściowych porządków.
+
+Jako wniosek otrzymujemy dyskretne nierówności Morse'a, uogólniające  (\ref{WST1}), (\ref{WST2}), (\ref{WST3}) oraz wyniki, które uzyskali Ayala, F{\'e}rnandez i~Vilches \cite[Theorem 3.8]{Ayala07}, \cite[Theorem 3.1]{Ayala09}). 
+
+\begin{stw*}[\ref{morse-ineq}]
+Niech $X$~będzie regularnym CW kompleksem z~zadanym skojarzeniem Morse'a $M$~takim, że rodzina klas równoważności promieni malejących w~$\mH_M(X)$ jest skończona. Dla każdej liczby naturalnej $n$~mają miejsce nierówności:
+\[c^M_n(X)+r^M_n(X)\geq \beta_n(X)\]
+oraz
+\[\sum_{i=0}^{n}(-1)^{n-i}\left(c^M_i(X)+r^M_i(X)\right)\geq \sum_{i=0}^{n}(-1)^{n-i}\beta_i(X),\] o~ile $c_i(M)+r_i(M)<\infty$ dla wszystkich $i\leq n$. 
+Ponadto, jeżeli $c^M_i(X)+r^M_i(X)<\infty$ dla wszystkich $i\in\mN$ oraz liczby te są niezerowe jedynie dla skończenie wielu indeksów $i\in\mN$, to charakterystyka Eulera CW kompleksu $X$~wyraża się wzorem \[\chi(X)=\sum_{i=0}^{\infty}(-1)^i \left(c^M_i(X)+r^M_i(X)\right).\]
+\end{stw*}
+
+Głównego twierdzenia dyskretnej teorii Morse'a dowodzimy również w~wersji algebraicznej, dotyczącej kompleksów łańcuchowych. Korzystamy przy tym z~wyników J{\"o}llenbecka \cite{Jollenbeck05}, które w~niewielkim stopniu uogólniamy.
+
+Mówimy, że regularny CW kompleks $X$~jest \textit{$\infty$-zgniatalny} do podkompleksu $Y$, o~ile istnieje skojarzenie Morse'a na $X$, komórki krytyczne względem którego tworzą ten podkompleks,~i~takie, że $\mH_M(X)$ nie zawiera promieni malejących. Podkompleks $Y$~jest wówczas mocnym retraktem deformacyjnym $X$. (Dla zwartych, regularnych CW kompleksów $\infty$-zgniatalność pokrywa się z~klasycznym pojęciem zgniatalności \cite{Cohen73}.) Podajemy związki $\infty$-zgniatalności z~(ko)rozbieralnością kompleksów symplicjalnych oraz częściowych porządków, które następnie wykorzystujemy w~dowodzie twierdzenia uogólniającego niepublikowany wynik Baclawskiego \cite{Baclawski} dotyczący typu homotopijnego kompleksu symplicjalnego stowarzyszonego ze \textit{ściętą} (tzn.~pozbawioną elementu największego $\ltop_L$~oraz najmniejszego $\lbottom_L$)~kratą $L$~\textit{bez dopełnień} (czyli~taką, że dla pewnego elementu $x$~nie istnieje element $y$~o~tej własności, iż $x\lor y=\ltop_L$~oraz $x\land y=\lbottom_L$). Twierdzenia tego typu mają długą i~interesującą historię (por.~\cite{Crapo66,Baclawski77,Baclawski81,Bjorner81,Bjorner83,Kozlov98,Baclawski12}).
+
+\begin{tw*}[\ref{wn-baclawskiego-o-kratach-bez-dopelnien}]
+Jeżeli $L$~jest kratą z~zerem i~jedynką, bez dopełnień, to kompleks symplicjalny $\mK(L\smallsetminus\{\ltop_L,\lbottom_L\})$ jest $\infty$-zgniatalny do punktu (a~zatem jego realizacja geometryczna jest ściągalna).
+\end{tw*}
+
+Stosujemy dyskretną teorię Morse'a do opisu własności topologii w~nieskończoności spójnego, lokalnie zwartego, regularnego CW kompleksu. Do sformułowania udowodnionych stwierdzeń potrzebne jest pojęcie promienia rosnącego. Jeśli $M$~jest skojarzeniem Morse'a na regularnym CW kompleksie $X$, to \textit{promieniem rosnącym} \cite{Ayala11} w~$\mH_M(X)$ nazywamy taki ciąg $(\sigma_i)_{i\in\mN}$ komórek CW kompleksu $X$, że $(\sigma_{i+1},\sigma_i)$ jest krawędzią grafu $\mH_M(X)$ dla liczby $i\in\mN$.
+
+\begin{stw*}[\ref{stw-dyskretna-teoria-morsea-oswojone-do-wewnatrz}, \ref{stw-dyskretna-teoria-morsea-oswojone-na-zewnatrz}]
+Niech $X$~będzie spójnym, lokalnie zwartym, regularnym CW kompleksem z~zadanym dyskretnym skojarzeniem Morse'a $M$~takim, że zbiór komórek krytycznych jest skończony. Jeżeli $\mH_M(X)$ nie zawiera promieni malejących (promieni rosnących), to CW kompleks $X$~ma kołnierzyk do wewnątrz (kołnierzyk na zewnątrz).
+\end{stw*}
+
+W~końcowej części rozdziału podajemy opis skojarzeń Morse'a w~terminach (uogólnionych) dyskretnych funkcji Morse'a.
+
+
+%--------------------------------------------------------------------
+\subsection*{Rozdział \ref{chap4}: Punkty i~końce stałe odwzorowań przestrzeni lokalnie zwartych}
+Rozdział \ref{chap4} rozpoczyna drugą część rozprawy, poświęconą punktom stałym. Dla zrozumienia jego wyników nieodzowne jest przyswojenie sobie pojęcia końca lokalnie zwartej przestrzeni topologicznej $X$. Załóżmy, że $X$~jest spójnym, lokalnie zwartym ANR-em (tzn.~absolutnym retraktem otoczeniowym ze względu na przestrzenie metryczne). \textit{Końcem} \cite{Milnor68} przestrzeni $X$~nazywamy funkcję \[\varepsilon\colon \{C\subseteq X:C\text{ jest zwarty}\}\to 2^X\smallsetminus \{\emptyset\}\] taką, że dla wszystkich zbiorów zwartych $C,D\subseteq X$ spełnione są warunki:
+\begin{compactitem}
+\item[---] zbiór $\varepsilon(C)$ jest składową spójności przestrzeni $X\smallsetminus C$;
+\item[---] jeżeli $D\subseteq C$, to $\varepsilon(C)\subseteq \varepsilon(D)$.
+\end{compactitem}
+Zbiór wszystkich końców przestrzeni $X$~oznaczamy symbolem $\E(X)$. (Dla przykładu, zbiór $\E(\mathbb{R})$ jest dwuelementowy, zbiór $\E(\mathbb{R}^2)$ jednoelementowy, zaś $\E(X)=\emptyset$ dla każdej zwartej przestrzeni $X$.) Końce intuicyjnie utożsamiać można z~,,kierunkami zbieżności do nieskończoności'' w~przestrzeni $X$. Mówimy, że ciągłe odwzorowanie $f\colon X\to Y$ jest \textit{właściwe}, jeżeli $f^{-1}(C)$~jest zbiorem zwartym dla każdego zwartego podzbioru $C\subseteq Y$. Odwzorowanie takie indukuje funkcję $\E(f)\colon \E(X)\to \E(Y)$. Jeżeli $f\colon X\to X$ jest właściwym odwzorowaniem, to punkt stały funkcji $\E(f)\colon \E(X)\to \E(X)$ nazywamy \textit{końcem stałym}~odwzorowania $f$. Rozdział \ref{chap4} poświęcony jest twierdzeniom, które przy pewnych założeniach o~właściwej funkcji $f\colon X\to X$ gwarantują, że ma ona punkt stały lub koniec stały.
+
+Analogiczne zagadnienie dla homomorfizmów lokalnie skończonych grafów rozważał Halin \cite{Halin73}; w~przypadku funkcji ciągłych zbliżone pomysły naszkicowane zostały w~artykule Weinbergera \cite{Weinberger09}. Autor nie wie o~innych pracach dotykających problemu istnienia punktu lub końca stałego właściwego odwzorowania ciągłego. Istnieje natomiast spora liczba publikacji dotyczących końców stałych działań grup (zob.~np.~\cite{Hamann11,Moller95}).
+
+Dowodząc twierdzenia o~punkcie lub końcu stałym wygodnie jest założyć, że odwzorowanie $f\colon X\to X$ nie ma końców stałych i~przy tym założeniu wykazywać istnienie punktu stałego. Tak też czynimy. Następujące twierdzenia należą do głównych wyników rozdziału.
+
+\begin{tw*}[\ref{tw-lefschetz_fpt_dla_reverse_tame}]
+Niech $X$~będzie oswojonym do wewnątrz, lokalnie zwartym, spójnym \mbox{ANR-em}, zaś $f\colon X\to X$ właściwym odwzorowaniem. Jeżeli przekształcenie $f$~nie ma końców stałych, to jest ono dopuszczalne (tzn.~liczba $\Lambda(f)$ jest dobrze określona) oraz~$\Lambda(f)=\Ind(f)$ (w~szczególności, jeśli $\Lambda(f)\not=0$, to $f$~ma punkt stały).
+\end{tw*}
+
+\begin{tw*}[\ref{tw-lefschetz_fpt_dla_forward_tame}]
+Niech $X$~będzie oswojonym na zewnątrz, lokalnie zwartym, spójnym \mbox{ANR-em}, zaś $f\colon X\to X$ właściwym odwzorowaniem. Jeżeli przekształcenie $f$~jest dopuszczalne, nie ma końców stałych oraz $\Lambda(f)\not=0$, to $f$~ma punkt stały.
+\end{tw*}
+
+\begin{tw*}[\ref{wn-simplicial-fixed-point-or-end-theorem}, \ref{tw-rownosc_indeksu_i_l_lefschetza_odwz_sympl}]
+Niech $K$~będzie lokalnie skończonym kompleksem symplicjalnym, zaś $\varphi\colon K\to K$ odwzorowaniem symplicjalnym, którego realizacja geometryczna $|\phi|\colon |K|\to |K|$ jest właściwa. Jeśli przekształcenie $|\phi|$ jest dopuszczalne i~nie ma końców stałych, to zachodzi równość uogólnionej liczby Lefschetza, indeksu punktów stałych oraz charakterystyki Eulera zbioru punktów stałych: $\Lambda(|\varphi|)=\Ind(|\varphi|)=\chi(\Fix(|\phi|))$.
+\end{tw*}
+
+Definiujemy koniec lokalnie skończonego częściowego porządku. Podobnie jak w~przypadku ciągłym \textit{właściwe} (tzn.~takie, że przeciwobraz zbioru skończonego jest skończony) odwzorowanie zachowujące porządek między lokalnie skończonymi częściowymi porządkami indukuje przekształcenie zbiorów ich końców. Mówimy, że częściowy porządek ma \textit{własność punktu lub końca stałego}, o~ile każde jego właściwe, zachowujące porządek przekształcenie w~siebie ma punkt stały lub koniec stały. Wiążemy tę własność z~wprowadzonymi w~rozdziale \ref{chapter2} pojęciami rozbieralności oraz korozbieralności, otrzymując następujący wynik (oraz jego symplicjalny odpowiednik), którego skończona wersja \cite[Theorem 4.2.5]{Schroder03} pełni ważną rolę w~teorii punktów stałych odwzorowań zachowujących porządek.
+
+\begin{tw*}[\ref{tw-loc_fin_fpp_thm_dism_2}, \ref{wn-loc_fin_fpp_thm_dism_1}]
+Niech $P,Q$ będą lokalnie skończonymi częściowymi porządkami. Jeżeli $P{\dism} Q$, to $P$~ma własność punktu lub końca stałego wtedy i~tylko wtedy, gdy $Q$~ma tę własność. Jeżeli $Q\codism P$ oraz $Q$~ma własność punktu stałego, to $P$~ma własność punktu lub końca stałego.
+\end{tw*}
+
+Nawiązujemy również do postawionego przez Kuratowskiego \cite{Kuratowski30} problemu dotyczącego zachowywania własności punktu stałego przez operację iloczynu kartezjańskiego przestrzeni topologicznych. Przypomnijmy, że jego rozwiązanie jest negatywne nawet w~przypadku, gdy jedna z~rozważanych przestrzeni jest zwartym wielościanem, zaś druga odcinkiem jednostkowym \cite{Brown82}. Pozytywna jest natomiast odpowiedź na analogiczne pytanie dotyczące skończonych częściowych porządków \cite{Roddy94}. Uogólniamy ten wynik, dowodząc następującego faktu.
+
+\begin{stw*}[\ref{stw-produkt_fpep_ma_fpep}]
+Jeśli $P,X$ są spójnymi, lokalnie skończonymi częściowymi porządkami mającymi własność punktu lub końca stałego, to częściowy porządek $P\times X$ również ma tę własność.
+\end{stw*}
+
+%--------------------------------------------------------------------
+\subsection*{Rozdział \ref{chap5}: Punkty stałe odwzorowań przestrzeni bez promieni}
+Ostatni rozdział rozprawy poświęcony jest twierdzeniom o~niepustości oraz strukturze zbioru punktów stałych odwzorowania symplicjalnego kompleksu symplicjalnego bez promieni w~siebie (oraz zachowującego porządek odwzorowania częściowego porządku bez promieni w~siebie). Badamy również zbiory punktów stałych działań grup na kompleksach symplicjalnych i~częściowych porządkach bez promieni.
+
+Są znane liczne twierdzenia o~istnieniu podzbioru niezmienniczego homomorfizmu~grafu bez promieni w~siebie \cite{Nowakowski79,Espinola06,Halin98,Polat93,Polat95,Polat96,Polat98,Polat04,Polat09,Polat12,Polat94,Schmidt83}. Zdecydowanie mniej uwagi zyskał ciągły wariant tego problemu, choć i~tu uzyskano pewne wyniki: Okhezin \cite{Okhezin95} udowodnił między innymi, że każde ciągłe, homotopijne z~funkcją stałej odwzorowanie wielościanu bez promieni w~siebie ma punkt stały, a~także, że ściągalny wielościan ma własność punktu stałego wtedy i~tylko wtedy, gdy jest przestrzenią bez promieni.
+
+Wpisując się w~ten nurt badań, dowodzimy, że opublikowane niedawno twierdzenie Baclawskiego \cite[Theorem 32]{Baclawski12}, dotyczące istnienia sympleksu stałego odwzorowania symplicjalnego skończonego, zgniatalnego do punktu kompleksu symplicjalnego w~siebie, pozostaje prawdziwe dla $\infty$-zgniatalnych do punktu kompleksów symplicjalnych bez promieni.
+
+\begin{tw*}[\ref{tw-baclawskiego_o_punkcie_stalym}]
+Jeżeli $K$~jest $\infty$-zgniatalnym do punktu kompleksem symplicjalnym bez promieni, to dla każdego odwzorowania symplicjalnego $\varphi\colon K\to K$ istnieje sympleks $\sigma$~kompleksu $K$~taki, że $\varphi(\sigma)=\sigma$.
+\end{tw*}
+
+Samo twierdzenie jest prostym wnioskiem ze wspomnianego wcześniej wyniku Okhezina; zamieszczamy je w~rozprawie ze względu na dowód, który jest ,,czysto kombinatoryczny'', tzn.~nie korzysta z~argumentów topologicznych czy algebraicznych. (Nie różni się on mocno od dowodu Baclawskiego \cite{Baclawski12} skończonej wersji twierdzenia.)
+
+Jako wniosek z~powyższego twierdzenia oraz wyników rozdziału \ref{chapter3} otrzymujemy następujące twierdzenie, dające częściową odpowiedź na pytanie postawione przez Bj{\"o}rnera \cite[s.~98]{Bjorner81}.
+
+\begin{tw*}[\ref{wn-o_fpp_dla_krat}]
+Jeżeli $L$~jest kratą z~zerem i~jedynką, bez dopełnień i~bez promieni, to częściowy porządek $L\smallsetminus\{\ltop_L,\lbottom_L\}$ ma własność punktu stałego.
+\end{tw*}
+
+Oprócz dowodów skończonych wersji wymienionych wyżej twierdzeń praca Baclawskiego zawiera następującą hipotezę \cite[Conjecture 34]{Baclawski12}: \textit{jeśli $P$~jest skończonym częściowym porządkiem o~tej własności, że kompleks symplicjalny $\mK(P)$~jest zgniatalny do punktu, zaś $f\colon P\to P$ jest zachowującym porządek odwzorowaniem, to kompleks symplicjalny $\mK(\Fix(f))$} (gdzie $\Fix(f)$~oznacza zbiór punktów stałych funkcji $f$) \textit{również jest zgniatalny do punktu}. Przy pomocy wyników uzyskanych przez Adiprasito i~Benedettiego \cite{Adiprasito13a} oraz Olivera \cite{Oliver75} wykazujemy, że hipoteza ta jest fałszywa: kompleks $\mK(\Fix(f))$ nie musi być nawet spójny. Uzyskujemy jednak również, w~oparciu o~prace Segeva \cite{Segev93,Segev94}, następujący rezultat, dotyczący częściowej prawdziwości hipotezy Baclawskiego w~niskich wymiarach.
+
+\begin{stw*}[\ref{stw-baclawski_dla_wymiarow_2_i_3}]
+Niech $P$~będzie skończonym częściowym porządkiem, zaś $f\colon P\to P$ zachowującym porządek odwzorowaniem. Załóżmy, że kompleks $\mK(P)$ jest zgniatalny. Wówczas:
+\begin{compactitem}
+\item[---] jeżeli $\dim(\mK(P))\leq 2$, to kompleks symplicjalny $\mK(\Fix(f))$ jest zgniatalny;
+\item[---] jeżeli $\dim(\mK(P))=3$, to kompleks symplicjalny $\mK(\Fix(f))$ jest acykliczny.
+\end{compactitem}
+\end{stw*}
+
+Wnioskujemy stąd, że \textit{jeśli $K$~jest skończonym, zgniatalnym kompleksem symplicjalnym wymiaru co najwyżej $2$, to zbiór punktów stałych realizacji geometrycznej dowolnego odwzorowania symplicjalnego $K$~w~siebie jest ściągalny; jeśli natomiast $\dim(K)=3$, to zbiór ten jest acykliczny}.
+
+W~teorii częściowych porządków znanych jest kilka twierdzeń dotyczących struktury zbioru punktów stałych (por.~\cite{Baclawski79,Duffus80a,Schroder99}). Zazwyczaj dotyczą one jednak skończonych zbiorów uporządkowanych (jednym z~wyjątków jest twierdzenie Tarskiego \cite{Tarski55} o~zupełnych kratach). Jak wspominaliśmy, wiadomo na przykład, że zbiór punktów stałych zachowującego porządek odwzorowania skończonego, rozbieralnego do punktu częściowego porządku w~siebie jest rozbieralny do punktu \cite{Duffus80a}. O~uogólnienia tego wyniku na nieskończone częściowe porządki pytał Schr{\"o}der \cite[s. 136]{Schroder03}. Poniższe twierdzenie, dające częściową odpowiedź na jego pytanie, jest jednym z~najważniejszych wyników rozdziału.
+
+\begin{tw*}[\ref{tw-fixed_point_set_of_a_map_is_dismantlable}]
+Niech $P$~będzie częściowym porządkiem bez promieni, zaś \mbox{$f\colon P\to P$} zachowującym porządek odwzorowaniem. Jeżeli $P\dism *$, to $\Fix(f)\dism *$.
+\end{tw*}
+
+Jako wniosek otrzymujemy symplicjalny odpowiednik powyższego twierdzenia: \textit{jeżeli $K$~jest kompleksem symplicjalnym, $\varphi\colon K\to K$ jest odwzorowaniem symplicjalnym oraz $K\dism *$, to zbiór $\Fix(|\varphi|)$ punktów stałych realizacji geometrycznej tego odwzorowania jest ściągalny.}
+
+Wspominaliśmy również, że podobny wynik jest znany dla działań grup na skończonych kompleksach symplicjalnych: jeżeli grupa $\Gamma$~działa na skończonym, rozbieralnym do punktu kompleksie symplicjalnym $K$, to zbiór punktów stałych działania indukowanego na realizacji geometrycznej $K$~jest ściągalny \cite{Barmak12,Hensel14}. (Kontrastuje to z~twierdzeniami dotyczącymi działań grup na skończonych kompleksach symplicjalnych o~ściągalnej realizacji geometrycznej: znane są nawet takie działania bez punktów stałych \cite{Floyd59}; badanie struktury zbioru punktów stałych działania grupy na skończonym i~acyklicznym, ściągalnym czy zgniatalnym kompleksie symplicjalnym ma długą tradycję i~stanowi źródło wielu interesujących problemów \cite{Smith42,Oliver75,Segev93,Segev94}).
+
+Wykazujemy, że skończoność kompleksu $K$~można zastąpić brakiem promieni: \textit{jeżeli grupa $\Gamma$~działa na kompleksie symplicjalnym bez promieni $K$~oraz $K\dism *$, to zbiór punktów stałych działania indukowanego na realizacji geometrycznej tego kompleksu jest ściągalny.} Podobnie jak wyżej fakt ten uzyskujemy jako wniosek z~podobnego wyniku dotyczącego częściowych porządków.
+
+\begin{stw*}[\ref{stw-sciaglana_g_przestrzen_sciagalne_punkty_stale}]
+Jeśli $P$~jest częściowym porządkiem bez promieni, z~zadanym działaniem grupy $\Gamma$~oraz $P\dism *$, to $P^\Gamma\dism *$.  
+\end{stw*}
+
+%---------------------------------------------------------------------
+% CO DALEJ?
+\section*{Co dalej?}
+Rozprawa nie wyczerpuje tematu ,,niezwartej topologii kombinatorycznej''; wskazuje natomiast możliwy kierunek dalszych badań. Część nie zrealizowanych w~niej pomysłów ujęta została w~formie stawianych w~poszczególnych rozdziałach problemów otwartych; dla wygody Czytelnika zostały one dodatkowo zebrane pod koniec rozprawy. Niektóre odnaleźć można ,,między wierszami''. Kilka luźnych myśli przedstawiamy w~poniższych akapitach. Poniekąd dotyczą one ,,braków'' rozprawy; jednak to właśnie braki i~niedopowiedzenia często stanowią motywację do dalszych poszukiwań.
+
+W~rozdziale \ref{chapter2}, w~przypadku wielu lematów dotyczących związków (ko)rozbieralności częściowych porządków z~(ko)rozbieralnością kompleksów symplicjalnych można postawić pytanie o~prawdziwość stwierdzeń do nich odwrotnych. Warto byłoby wiedzieć, które z~implikacji można odwrócić (być może przy wzmocnionych założeniach), a~tam, gdzie nie jest to możliwe, wskazać kontrprzykłady.
+
+Autor nie jest przekonany, że przyjęta w~rozdziale \ref{chapter2} definicja mocnego typu homotopijnego nieskończonego kompleksu symplicjalnego jest ,,tą właściwą''. Chętnie poznałby argumenty pozwalające rozstrzygnąć ten dylemat.
+
+Część rozdziału \ref{chapter3} poświęcona jest związkom dyskretnej teorii Morse'a z~topologią w~nieskończoności lokalnie skończonego kompleksu symplicjalnego. Ciekawe byłoby opisanie homologii w~nieskończoności oraz homologii lokalnie skończonych przy użyciu dyskretnej teorii Morse'a (problem ten sformułował również, w~liście do autora rozprawy, ale niezależnie od niego, Vilches \cite{Vilches}).
+
+Pewien niedosyt autor odczuwa w~związku z~niewielką liczbą przykładów zastosowań opisanych w~rozprawie metod; odczucie to dotyczy zwłaszcza rozdziału \ref{chap4}. Znalezienie nietrywialnego wykorzystania dla jego wyników byłoby bardzo mile widziane. Odnośnie metod rozdziału \ref{chapter3} autor jest przekonany, że można zastosować je przy badaniu metrycznych kompleksów symplicjalnych w~podobny sposób, jak zostało to uczynione w~przypadku skończonym w~pracy Adiprasito i~Benedettiego \cite{Adiprasito13} (zob.~też~\cite{Baralic}).
+
+Autor ma przeczucie, że przedstawione w~rozdziale \ref{chap4}~twierdzenia o~punkcie lub końcu stałym właściwych odwzorowań lokalnie zwartych \mbox{ANR-ów} powinny mieć wspólne uogólnienie.
+
+Szanse powodzenia wydaje się mieć próba połączenia wyników rozdziału \ref{chap4}~oraz pracy Okhezina \cite{Okhezin95}. Autor jest zdania, że można zdefiniować klasę kompleksów symplicjalnych ,,lokalnie bez promieni'', których ograniczone (w~odpowiednim sensie) podzbiory nie zawierają promieni, a~następnie udowodnić twierdzenie o~istnieniu punktu lub końca stałego przy założeniu, że $K$~jest kompleksem symplicjalnym ,,lokalnie bez promieni'' o~ściągalnej realizacji geometrycznej, spełniającym odpowiednik warunku oswojoności do wewnątrz, zaś $f\colon |K|\to |K|$ jest  ciągłym odwzorowaniem o~tej własności, że zbiór $f^{-1}(A)$~jest bez promieni dla każdego podzbioru $A\subseteq |K|$ bez promieni.
+
+Jedną z~intencji przyświecających autorowi przy pisaniu rozprawy było wzbudzenie u~Czytelnika zainteresowania wielościanami oraz częściowymi porządkami bez promieni. Wydaje się, że obiekty te, choć są praktycznie nieobecne w~literaturze, mają wiele ,,dobrych'' własności i~mogą stanowić ciekawy temat badań.
+
+Podobno \cite{178993} William Dwyer porównał kiedyś pracę matematyka do przygotowywania obiadu dla grona przyjaciół. Autor ma nadzieję, że sporządzony przez niego posiłek okaże się jadalny, i~chociaż objętościowo jest dość obfity, nie stanie się dla Czytelnika przyczyną niestrawności.
+\newpage\thispagestyle{empty}
